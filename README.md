@@ -19,4 +19,20 @@ structure when you are creating a new one.
 fields, buttons and so on. Shortly, widgets which are used in many features and could be customized for these features'
  needs.
  
+ ## Branching
+ There are 3 types of branches:
+ - master - main stable version of the app
+ - develop - most latest app version
+ - feature/... - you current work on some kind of feature (should be review before merge into develop)
+ 
+ To have normal flow without conflicts and proper code review we will stand by feature-based branching strategy.
+ What does it mean? You have 'develop' branch, which is the latest and actual branch. When you are goind to make
+ a new feature, you should get the latest version of 'develop' locally, after that checkout a new branch named
+ 'feature/your_feature_name'.
+ 
+ After you've finished your work on the feature - you are creating pull request via GitHub UI and this PR should
+ be review by team members to exclude some possible syntax errors or "wheel invention". After approve
+ this PR is being merged to develop and feature branch is deleted.
+ 
  # Good luck and may the force be with us!
+ 
