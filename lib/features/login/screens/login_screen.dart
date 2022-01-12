@@ -28,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _login() {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('You now should log in to system')));
     /// TODO: All code below is not required for your app, because it was made to auth
     /// in Firebase. Instead this method should handle your backend authentication.
     ///
@@ -93,7 +94,15 @@ class _LoginScreenState extends State<LoginScreen> {
             alignment: AlignmentDirectional.center,
           )
         : Scaffold(
-            backgroundColor: Colors.deepPurple[50],
+            appBar: AppBar(
+              iconTheme: IconThemeData(
+                color: Colors.black, //change your color here
+              ),
+              automaticallyImplyLeading: true,
+              backgroundColor: Colors.white,
+              elevation: 0,
+            ),
+            backgroundColor: Colors.white,
             body: Padding(
               padding: EdgeInsets.symmetric(horizontal: 46.0),
               child: Form(
@@ -157,34 +166,44 @@ class _LoginScreenState extends State<LoginScreen> {
                           )
                         : SizedBox.shrink(),
                     Container(
+                      padding: EdgeInsets.symmetric(vertical: 8),
                       child: ButtonTheme(
                         minWidth: 350.0,
-                        height: 36.0,
+                        height: 48.0,
                         child: RaisedButton(
-                          child: Text('Log in'),
+                          elevation: 8,
+                          child: Text(
+                            'LOG IN',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                           onPressed: () => _login(),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          color: Colors.deepPurple[300],
+                          color: Colors.black,
                           textColor: Colors.white,
                         ),
                       ),
                     ),
                     Container(
+                      padding: EdgeInsets.symmetric(vertical: 8),
                       child: ButtonTheme(
                         minWidth: 350.0,
-                        height: 36.0,
+                        height: 48.0,
                         child: RaisedButton(
-                          child: Text('Sign up'),
+                          elevation: 8,
+                          child: Text(
+                            'REJESTRACJA',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
                           onPressed: () => Navigator.pushNamedAndRemoveUntil(
                               context,
                               '/sign-up',
                               ModalRoute.withName('/sign-up')),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          color: Colors.purple[50],
+                          color: Colors.white,
                           textColor: Colors.black,
                         ),
                       ),

@@ -35,24 +35,24 @@ class UserSignDataTextField extends StatelessWidget {
             ),
           ),
           Material(
-            elevation: 5.0,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(20),
               side: BorderSide(
-                color: Colors.black54,
+                width: 2,
+                color: Colors.black,
               ),
             ),
             child: TextFormField(
               cursorColor: Colors.black,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(20),
                   borderSide: BorderSide.none,
                 ),
                 isDense: true,
-                contentPadding: EdgeInsets.fromLTRB(16.0, 8.0, 8.0, 8.0),
+                contentPadding: EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 16.0),
                 hintText: hintText,
-                hintStyle: TextStyle(fontSize: 13),
+                hintStyle: TextStyle(fontSize: 14),
                 fillColor: Colors.white,
                 filled: true,
               ),
