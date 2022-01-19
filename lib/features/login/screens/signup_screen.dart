@@ -27,7 +27,8 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   void _signUp() {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('You now should sign up to system')));
+    ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('You now should sign up to system')));
     _formKey.currentState!.validate();
     // if (!_checked) {
     //   _errorOnChecked = true;
@@ -128,7 +129,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     UserSignDataTextField(
                       hintText: 'name@email.com',
                       onSaved: (value) {},
-                      validatorFunction: ValidationBuilder().email('Un correct e-mail').build(),
+                      validatorFunction: ValidationBuilder()
+                          .email('Un correct e-mail')
+                          .build(),
                       controller: _emailTextEditingController,
                     ),
                     _userExists
@@ -146,8 +149,10 @@ class _SignupScreenState extends State<SignupScreen> {
                     UserSignDataTextField(
                       hintText: 'at least 8 characters',
                       validatorFunction: ValidationBuilder()
-                          .required('Password should be provided and be longer that 8 characters')
-                          .minLength(8, 'Invalid password. Must be longer that 8 characters')
+                          .required(
+                              'Password should be provided and be longer that 8 characters')
+                          .minLength(8,
+                              'Invalid password. Must be longer that 8 characters')
                           .build(),
                       onSaved: (value) {},
                       obscureText: true,
@@ -164,7 +169,9 @@ class _SignupScreenState extends State<SignupScreen> {
                             'DALEJ',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          onPressed: () => _signUp(),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/home-screen');
+                          },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -184,7 +191,8 @@ class _SignupScreenState extends State<SignupScreen> {
                             'LOG IN',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/login', ModalRoute.withName('/log-in')),
+                          onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                              context, '/login', ModalRoute.withName('/login')),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),

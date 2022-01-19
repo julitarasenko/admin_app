@@ -28,7 +28,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _login() {
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('You now should log in to system')));
+    ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('You now should log in to system')));
     _formKey.currentState!.validate();
 
     /// TODO: All code below is not required for your app, because it was made to auth
@@ -178,7 +179,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             'LOG IN',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          onPressed: () => _login(),
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/home-screen');
+                          },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
@@ -198,7 +201,10 @@ class _LoginScreenState extends State<LoginScreen> {
                             'REJESTRACJA',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/sign-up', ModalRoute.withName('/login')),
+                          onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              '/sign-up',
+                              ModalRoute.withName('/login')),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
