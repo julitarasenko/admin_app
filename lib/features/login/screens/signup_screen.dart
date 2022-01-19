@@ -99,6 +99,14 @@ class _SignupScreenState extends State<SignupScreen> {
             alignment: AlignmentDirectional.center,
           )
         : Scaffold(
+            appBar: AppBar(
+              iconTheme: IconThemeData(
+                color: Colors.black, //change your color here
+              ),
+              automaticallyImplyLeading: true,
+              backgroundColor: Colors.white,
+              elevation: 0,
+            ),
             backgroundColor: Colors.white,
             body: Padding(
               padding: EdgeInsets.symmetric(horizontal: 46.0),

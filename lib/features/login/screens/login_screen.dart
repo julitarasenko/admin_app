@@ -198,7 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             'REJESTRACJA',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/sign-up', ModalRoute.withName('/sign-up')),
+                          onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/sign-up', ModalRoute.withName('/login')),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
