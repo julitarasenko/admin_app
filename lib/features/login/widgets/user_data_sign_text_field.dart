@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UserSignDataTextField extends StatelessWidget {
-  final String fieldDescription;
+  final String? fieldDescription;
   final String hintText;
   final void Function(String?)? onSaved;
   final String? Function(String?)? validatorFunction;
@@ -9,7 +9,7 @@ class UserSignDataTextField extends StatelessWidget {
   final TextEditingController controller;
 
   UserSignDataTextField({
-    required this.fieldDescription,
+    this.fieldDescription,
     required this.hintText,
     required this.onSaved,
     required this.validatorFunction,
@@ -20,20 +20,22 @@ class UserSignDataTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16.0),
+      margin: EdgeInsets.only(bottom: 16.0, top: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.only(bottom: 8.0),
-            child: Text(
-              fieldDescription,
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
+          fieldDescription != null
+              ? Padding(
+                  padding: EdgeInsets.only(bottom: 8.0),
+                  child: Text(
+                    fieldDescription!,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                )
+              : SizedBox.shrink(),
           Material(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),

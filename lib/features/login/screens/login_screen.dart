@@ -29,6 +29,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _login() {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('You now should log in to system')));
+    _formKey.currentState!.validate();
+
     /// TODO: All code below is not required for your app, because it was made to auth
     /// in Firebase. Instead this method should handle your backend authentication.
     ///
@@ -196,10 +198,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             'REJESTRACJA',
                             style: TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                              context,
-                              '/sign-up',
-                              ModalRoute.withName('/sign-up')),
+                          onPressed: () => Navigator.pushNamedAndRemoveUntil(context, '/sign-up', ModalRoute.withName('/sign-up')),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
