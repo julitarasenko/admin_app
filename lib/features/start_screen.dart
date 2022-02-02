@@ -1,7 +1,6 @@
+import 'package:admin_app/features/login/screens/login_screen.dart';
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
-
-import 'login/screens/login_screen.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({Key? key}) : super(key: key);
@@ -35,7 +34,9 @@ class StartScreen extends StatelessWidget {
                 colorButton: Color(0xFF4DAF8C),
                 onPressed: () => Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ),
                 ),
               ),
             ),

@@ -163,16 +163,18 @@ class _SignupScreenState extends State<SignupScreen> {
                       text: 'DALEJ',
                       colorText: Color(0xFFFEFEFE),
                       colorButton: Color(0xFF4DAF8C),
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/home-screen');
-                      },
+                      onPressed: () =>
+                          Navigator.of(context).pushNamed('/home-screen'),
                     ),
                     ButtonWidget(
                       text: 'LOG IN',
                       colorText: Color(0xFF263139),
                       colorButton: Color(0xFFFEFEFE),
-                      onPressed: () => () => Navigator.pushNamedAndRemoveUntil(
-                          context, '/login', ModalRoute.withName('/login')),
+                      onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        '/login',
+                        ModalRoute.withName('/login'),
+                      ),
                     ),
                   ],
                 ),
