@@ -41,17 +41,17 @@ flutter:
   fonts:
     - family: Manrope
       fonts:
-        - asset: fonts/Manrope-Bold.ttf
-        - asset: fonts/Manrope-ExtraBold.ttf
-        - asset: fonts/Manrope-ExtraLight.ttf
-        - asset: fonts/Manrope-Light.ttf
-        - asset: fonts/Manrope-Medium.ttf
-        - asset: fonts/Manrope-Regular.ttf
-        - asset: fonts/Manrope-SemiBold.ttf
+        - asset: assets/fonts/Manrope-Bold.ttf
+        - asset: assets/fonts/Manrope-ExtraBold.ttf
+        - asset: assets/fonts/Manrope-ExtraLight.ttf
+        - asset: assets/fonts/Manrope-Light.ttf
+        - asset: assets/fonts/Manrope-Medium.ttf
+        - asset: assets/fonts/Manrope-Regular.ttf
+        - asset: assets/fonts/Manrope-SemiBold.ttf
 
     - family: Circe
       fonts:
-        - asset: fonts/Circe.otf
+        - asset: assets/fonts/Circe.otf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
