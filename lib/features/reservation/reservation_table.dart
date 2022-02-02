@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Data_of_one_rezervation extends StatelessWidget {
-  final String? rezervacja;
-  final String? doctor;
-  final int color;
+class ReservationTable extends StatelessWidget {
+  final String reservation;
+  final String doctor;
+  final Color color;
 
-  Data_of_one_rezervation({
-    this.rezervacja,
-    this.doctor,
+  ReservationTable({
+    required this.reservation,
+    required this.doctor,
     required this.color,
   });
 
@@ -33,7 +33,7 @@ class Data_of_one_rezervation extends StatelessWidget {
                   offset: Offset(0, 4),
                 ),
               ],
-              color: Color(color),
+              color: color,
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -47,11 +47,11 @@ class Data_of_one_rezervation extends StatelessWidget {
                     children: [
                       Positioned(
                         child: Text(
-                          rezervacja!,
+                          reservation,
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 13,
-                            fontFamily: "Roboto",
+                            fontFamily: 'Manrope',
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -60,10 +60,11 @@ class Data_of_one_rezervation extends StatelessWidget {
                         child: Align(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            doctor!,
+                            doctor,
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 13,
+                              fontFamily: 'Circe',
                             ),
                           ),
                         ),

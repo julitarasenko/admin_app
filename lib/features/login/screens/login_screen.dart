@@ -117,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Container(
                       margin: EdgeInsets.only(bottom: 8.0),
                       child: Text(
-                        "Log in.",
+                        'Log in.',
                         style: TextStyle(
                           fontSize: 35.0,
                           fontWeight: FontWeight.bold,
@@ -127,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Container(
                       margin: EdgeInsets.only(bottom: 16.0),
                       child: Text(
-                        "Log in with your data that you entered during your registration.",
+                        'Log in with your data that you entered during your registration.',
                         style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.w400,
@@ -135,8 +135,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     UserSignDataTextField(
-                      fieldDescription: "Your e-mail",
-                      hintText: "name@email.com",
+                      fieldDescription: 'Your e-mail',
+                      hintText: 'name@email.com',
                       onSaved: (value) {},
                       validatorFunction: (value) {
                         if (value != null) {
@@ -149,8 +149,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: _emailTextEditingController,
                     ),
                     UserSignDataTextField(
-                      fieldDescription: "Password",
-                      hintText: "at least 8 characters",
+                      fieldDescription: 'Password',
+                      hintText: 'at least 8 characters',
                       validatorFunction: (value) {},
                       onSaved: (value) {},
                       obscureText: true,
@@ -160,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ? Container(
                             margin: EdgeInsets.only(bottom: 8.0),
                             child: Text(
-                              "Invalid e-mail or password. Try again.",
+                              'Invalid e-mail or password. Try again.',
                               style: TextStyle(
                                 fontSize: 12.0,
                                 color: Colors.red,
