@@ -101,15 +101,6 @@ class _SignupScreenState extends State<SignupScreen> {
             alignment: AlignmentDirectional.center,
           )
         : Scaffold(
-            appBar: AppBar(
-              iconTheme: IconThemeData(
-                color: Colors.black, //change your color here
-              ),
-              automaticallyImplyLeading: true,
-              backgroundColor: Colors.white,
-              elevation: 0,
-            ),
-            backgroundColor: Colors.white,
             body: Padding(
               padding: EdgeInsets.symmetric(horizontal: 46.0),
               child: Form(
@@ -122,11 +113,13 @@ class _SignupScreenState extends State<SignupScreen> {
                       child: Text(
                         'Rejestracja',
                         style: TextStyle(
+                          fontFamily: 'Monrope',
                           fontSize: 35.0,
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
+                    SizedBox(height: 10,),
                     UserSignDataTextField(
                       hintText: 'name@email.com',
                       onSaved: (value) {},

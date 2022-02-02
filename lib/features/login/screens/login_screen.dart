@@ -98,15 +98,6 @@ class _LoginScreenState extends State<LoginScreen> {
             alignment: AlignmentDirectional.center,
           )
         : Scaffold(
-            appBar: AppBar(
-              iconTheme: IconThemeData(
-                color: Colors.black, //change your color here
-              ),
-              automaticallyImplyLeading: true,
-              backgroundColor: Colors.white,
-              elevation: 0,
-            ),
-            backgroundColor: Colors.white,
             body: Padding(
               padding: EdgeInsets.symmetric(horizontal: 46.0),
               child: Form(
@@ -116,27 +107,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(bottom: 8.0),
+                      margin: EdgeInsets.only(bottom: 10.0),
                       child: Text(
                         'Log in.',
                         style: TextStyle(
                           fontSize: 35.0,
+                          fontFamily: 'Manrope',
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 16.0),
-                      child: Text(
-                        'Log in with your data that you entered during your registration.',
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
                     UserSignDataTextField(
-                      fieldDescription: 'Your e-mail',
                       hintText: 'name@email.com',
                       onSaved: (value) {},
                       validatorFunction: (value) {
@@ -150,7 +131,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: _emailTextEditingController,
                     ),
                     UserSignDataTextField(
-                      fieldDescription: 'Password',
                       hintText: 'at least 8 characters',
                       validatorFunction: (value) {},
                       onSaved: (value) {},

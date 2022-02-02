@@ -37,6 +37,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/images/
+#    - assets/images/start_screen_background.png
 
   fonts:
     - family: Manrope
