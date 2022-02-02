@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import '../core/httpClientGet.dart';
 
-class Sick_LeaveButtonWidget extends StatefulWidget {
+
+class aidswidget extends StatefulWidget {
   @override
-  _Sick_LeaveButtonWidgetState createState() => _Sick_LeaveButtonWidgetState();
+  _aidswidgetState createState() => _aidswidgetState();
 }
 
-class _Sick_LeaveButtonWidgetState extends State<Sick_LeaveButtonWidget> {
+class _aidswidgetState extends State<aidswidget> {
   @override
   Widget build(BuildContext context) {
-    // Figma Flutter Generator ButtonWidget - INSTANCE
 
     return Container(
         width: 300,
-        height: 52,
+        height: 77,
 
         child: Stack(
             children: <Widget>[
@@ -22,7 +21,7 @@ class _Sick_LeaveButtonWidgetState extends State<Sick_LeaveButtonWidget> {
                   left: 0,
                   child: Container(
                       width: 300,
-                      height: 52,
+                      height: 77,
                       decoration: BoxDecoration(
                         borderRadius : BorderRadius.only(
                           topLeft: Radius.circular(20),
@@ -38,12 +37,23 @@ class _Sick_LeaveButtonWidgetState extends State<Sick_LeaveButtonWidget> {
                       )
                   )
               ),Positioned(
-                  top: 20,
-                  left: 84,
-                  child: Text('Twoje zwolnienia', textAlign: TextAlign.center, style: TextStyle(
+                  top: 10,
+                  left: 22,
+                  child: Text('AIDS', textAlign: TextAlign.left, style: TextStyle(
                       color: Color.fromRGBO(38, 49, 57, 1),
                       fontFamily: 'Manrope',
-                      fontSize: 16,
+                      fontSize: 24,
+                      letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
+                      fontWeight: FontWeight.normal,
+                      height: 1
+                  ),)
+              ),Positioned(
+                  top: 48,
+                  left: 22,
+                  child: Text('02.04.2005 - DALEJ', textAlign: TextAlign.center, style: TextStyle(
+                      color: Color.fromRGBO(38, 49, 57, 1),
+                      fontFamily: 'Circe',
+                      fontSize: 13,
                       letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
                       fontWeight: FontWeight.normal,
                       height: 1

@@ -3,6 +3,7 @@ import 'package:admin_app/features/login/screens/login_screen.dart';
 import 'package:admin_app/features/login/screens/signup_screen.dart';
 import 'package:admin_app/features/reservation/reservations_screen.dart';
 import 'package:admin_app/features/start_screen.dart';
+import 'package:admin_app/features/Profile_main.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context) => SignupScreen(),
         '/home-screen': (context) => HomeScreen(),
         '/reservation': (context) => ReservationScreen(),
+        '/profile_widget': (context) => ProfilWidget(),
       },
     );
   }

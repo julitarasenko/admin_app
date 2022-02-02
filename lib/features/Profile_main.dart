@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:admin_app/configuration%20folder/loc_files.dart';
+import 'package:admin_app/widgets/VaccineWidget.dart';
+import 'package:admin_app/widgets/aidswidget.dart';
+import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import '../widgets/ButtonWidget.dart';
 import '../widgets/European_Health_Insurance_CardButtonWidget.dart';
 import '../widgets/SanepidButtonWidget.dart';
@@ -17,6 +19,7 @@ void main() {
   runApp(const Profile());
 }
 
+//image: new AssetImage(images + 'janek.png'),
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
 
@@ -54,63 +57,10 @@ class _ProfilWidgetState extends State<ProfilWidget> {
         ),
         child: Stack(alignment: Alignment.center, children: <Widget>[
           Positioned(
-              top: 0,
-              left: 0,
-              child: Container(
-                  width: 375,
-                  height: 812,
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                  ))),
-          Positioned(
-              top: 88,
-              left: 0,
-              child: Container(
-                  width: 375,
-                  height: 825,
-                  decoration: const BoxDecoration(
-                    color: Color.fromRGBO(255, 255, 255, 1),
-                  ))),
-          Positioned(
-              top: 112,
-              child: Container(
-                  width: 128,
-                  height: 128,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: new AssetImage(images + 'janek.png'),
-                        fit: BoxFit.fitWidth),
-                    borderRadius:
-                        const BorderRadius.all(Radius.elliptical(128, 128)),
-                  ))),
-          const Positioned(
-              top: 271,
-              child: Text(
-                'Jan',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(0, 0, 0, 1),
-                    fontFamily: 'Comfortaa',
-                    fontSize: 36,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              )),
-          const Positioned(
-              top: 327,
-              child: Text(
-                'Szczecin',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: Color.fromRGBO(0, 0, 0, 1),
-                    fontFamily: 'Roboto',
-                    fontSize: 15,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                    fontWeight: FontWeight.bold,
-                    height: 1),
-              )),
+              top: 50,
+              left: 38,
+              child:profile_widget(),
+          ),
           Positioned(
             top: 374,
             child: ButtonWidget(),
@@ -126,6 +76,10 @@ class _ProfilWidgetState extends State<ProfilWidget> {
           Positioned(
             top: 578,
             child: SanepidButtonWidget(),
+          )
+          ,Positioned(
+            top: 650,
+            child: vaccinewidget(),
           )
         ]));
   }

@@ -1,15 +1,15 @@
+import 'package:admin_app/configuration%20folder/loc_files.dart';
 import 'package:flutter/material.dart';
 
 
-class profile extends StatefulWidget {
+class profile_widget extends StatefulWidget {
   @override
-  _profileState createState() => _profileState();
+  _profile_widgetState createState() => _profile_widgetState();
 }
 
-class _profileState extends State<profile> {
+class _profile_widgetState extends State<profile_widget> {
   @override
   Widget build(BuildContext context) {
-    // Figma Flutter Generator profile - COMPONENT
 
     return Container(
         width: 300,
@@ -24,11 +24,7 @@ class _profileState extends State<profile> {
                       width: 300,
                       height: 280,
                       decoration: BoxDecoration(
-                        borderRadius : BorderRadius.only(
-                          topLeft: Radius.circular(40),
-                          topRight: Radius.circular(40),
-                          bottomLeft: Radius.circular(40),
-                          bottomRight: Radius.circular(40),
+                        borderRadius : BorderRadius.all(Radius.circular(40)
                         ),
                         color : Color.fromRGBO(77, 175, 140, 1),
                       )
@@ -50,7 +46,7 @@ class _profileState extends State<profile> {
                                     height: 150,
                                     decoration: BoxDecoration(
                                       image : DecorationImage(
-                                          image: AssetImage('assets/images/Ellipse.png'),
+                                          image: new AssetImage(images + 'janek.png'),
                                           fit: BoxFit.fitWidth
                                       ),
                                       borderRadius : BorderRadius.all(Radius.elliptical(150, 150)),
@@ -67,7 +63,7 @@ class _profileState extends State<profile> {
                                         children: <Widget>[
                                           Positioned(
                                               top: 0,
-                                              left: 0,
+                                              left:5,
                                               child: Text('Jan Biskupski', textAlign: TextAlign.center, style: TextStyle(
                                                   color: Color.fromRGBO(254, 254, 254, 1),
                                                   fontFamily: 'Manrope',
@@ -78,7 +74,7 @@ class _profileState extends State<profile> {
                                               ),)
                                           ),Positioned(
                                               top: 33,
-                                              left: 46,
+                                              left: 45,
                                               child: Text('Szczecin', textAlign: TextAlign.center, style: TextStyle(
                                                   color: Color.fromRGBO(254, 254, 254, 1),
                                                   fontFamily: 'Circe',
