@@ -246,11 +246,9 @@ class karta_zdrowia extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-
               Container(),
             ],
           ),
-
         );
       }),
       theme: ThemeData(
