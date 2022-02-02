@@ -24,8 +24,8 @@ class _ReservationScreenState extends State<ReservationScreen> {
                 'Przyszłe rezerwacje',
                 style: TextStyle(
                   fontSize: 24.0,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w800,
                 ),
               ),
             ),
@@ -41,8 +41,8 @@ class _ReservationScreenState extends State<ReservationScreen> {
                 'Przeszłe rezerwacje',
                 style: TextStyle(
                   fontSize: 24.0,
-                  fontFamily: 'Roboto',
-                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Manrope',
+                  fontWeight: FontWeight.w800,
                 ),
               ),
             ),

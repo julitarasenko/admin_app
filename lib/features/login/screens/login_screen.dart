@@ -1,4 +1,5 @@
 // TODO: Should be deleted when any other screen will be added!
+import 'package:admin_app/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
@@ -168,50 +169,20 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           )
                         : SizedBox.shrink(),
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 8),
-                      child: ButtonTheme(
-                        minWidth: 350.0,
-                        height: 48.0,
-                        child: RaisedButton(
-                          elevation: 8,
-                          child: Text(
-                            'LOG IN',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/home-screen');
-                          },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          color: Colors.black,
-                          textColor: Colors.white,
-                        ),
-                      ),
+                    ButtonWidget(
+                      text: 'LOG IN',
+                      colorText: Color(0xFFFEFEFE),
+                      colorButton: Color(0xFF4DAF8C),
+                      onPressed: () {
+                        Navigator.of(context).pushNamed('/home-screen');
+                      },
                     ),
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 8),
-                      child: ButtonTheme(
-                        minWidth: 350.0,
-                        height: 48.0,
-                        child: RaisedButton(
-                          elevation: 8,
-                          child: Text(
-                            'REJESTRACJA',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                              context,
-                              '/sign-up',
-                              ModalRoute.withName('/login')),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          color: Colors.white,
-                          textColor: Colors.black,
-                        ),
-                      ),
+                    ButtonWidget(
+                      text: 'REJESTRACJA',
+                      colorText: Color(0xFF263139),
+                      colorButton: Color(0xFFFEFEFE),
+                      onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                          context, '/sign-up', ModalRoute.withName('/login')),
                     ),
                   ],
                 ),

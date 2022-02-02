@@ -1,5 +1,7 @@
-import 'package:admin_app/features/login/screens/login_screen.dart';
+import 'package:admin_app/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
+
+import 'login/screens/login_screen.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({Key? key}) : super(key: key);
@@ -27,29 +29,13 @@ class StartScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: Container(
-                height: MediaQuery.of(context).size.height / 2,
-                padding: EdgeInsets.only(bottom: 16),
-                alignment: Alignment.bottomCenter,
-                child: ButtonTheme(
-                  minWidth: 350.0,
-                  height: 48.0,
-                  child: RaisedButton(
-                    elevation: 8,
-                    child: Text(
-                      'ZALOGUJ SIĘ Z PROFILEM ZAUFANYM',
-                      style: TextStyle(fontSize: 14),
-                    ),
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    color: Colors.black,
-                    textColor: Colors.white,
-                  ),
+              child: ButtonWidget(
+                text: 'ZALOGUJ SIĘ Z PROFILEM ZAUFANYM',
+                colorText: Color(0xFFFEFEFE),
+                colorButton: Color(0xFF4DAF8C),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
                 ),
               ),
             ),
