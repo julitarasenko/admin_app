@@ -77,10 +77,6 @@ class _ProfilWidgetState extends State<ProfilWidget> {
             top: 578,
             child: SanepidButtonWidget(),
           )
-          ,Positioned(
-            top: 650,
-            child: vaccinewidget(),
-          )
         ]));
   }
 }
