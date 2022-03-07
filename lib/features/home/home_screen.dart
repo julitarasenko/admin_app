@@ -1,4 +1,5 @@
 import 'package:admin_app/features/reservation/reservations_screen.dart';
+import 'package:admin_app/features/sick_leave/screens/sick_leave_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,13 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ),
     ReservationScreen(),
-    Text(
-      'Index 2: Czat',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+    SickLeaveScreen(),
     Text(
       'Index 3: Karta zdrowia',
       style: TextStyle(

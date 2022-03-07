@@ -31,7 +31,8 @@ class UserSignDataTextField extends StatelessWidget {
                     fieldDescription!,
                     style: TextStyle(
                       fontSize: 14,
-                      fontWeight: FontWeight.w500,
+                      fontFamily: 'Manrope',
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 )
@@ -41,11 +42,11 @@ class UserSignDataTextField extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               side: BorderSide(
                 width: 2,
-                color: Colors.black,
+                color: Color(0xFFFEFEFE),
               ),
             ),
             child: TextFormField(
-              cursorColor: Colors.black,
+              cursorColor: Color(0xFF263139),
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -54,8 +55,8 @@ class UserSignDataTextField extends StatelessWidget {
                 isDense: true,
                 contentPadding: EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 16.0),
                 hintText: hintText,
-                hintStyle: TextStyle(fontSize: 14),
-                fillColor: Colors.white,
+                hintStyle: TextStyle(fontFamily: 'Circe', fontSize: 14),
+                fillColor: Color(0xFFEFF1F3),
                 filled: true,
               ),
               obscureText: obscureText,
