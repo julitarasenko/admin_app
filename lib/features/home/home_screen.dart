@@ -1,4 +1,8 @@
+import 'package:admin_app/features/karta_zdrowia/screens/karta_zdrowia.dart';
+import 'package:admin_app/features/profile_main.dart';
 import 'package:admin_app/features/reservation/reservations_screen.dart';
+import 'package:admin_app/features/sick_leave/screens/sick_leave_screen.dart';
+import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,27 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ),
     ReservationScreen(),
-    Text(
-      'Index 2: Czat',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-    Text(
-      'Index 3: Karta zdrowia',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-    Text(
-      'Index 4: Profil',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+    SickLeaveScreen(),
+    KartaZdrowia(),
+    Profile(),
   ];
 
   void onTabTapped(int index) {

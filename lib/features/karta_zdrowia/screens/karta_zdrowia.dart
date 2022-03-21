@@ -1,260 +1,81 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'dart:ui';
+import 'package:admin_app/configuration%20folder/loc_files.dart';
+import 'package:admin_app/features/karta_zdrowia/screens/one_text_cards.dart';
 
-void main() {
-  runApp(karta_zdrowia());
+
+class KartaZdrowia extends StatefulWidget {
+  @override
+  _KartaZdrowiaState createState() => _KartaZdrowiaState();
 }
 
-class karta_zdrowia extends StatelessWidget {
+class _KartaZdrowiaState extends State<KartaZdrowia> {
+  // final GlobalKey<FormState> _formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Builder(builder: (BuildContext context) {
-        return Scaffold(
-          body: Stack(
-            children: [
-              Positioned(
-                left: 18,
-                top: 107,
-                child: Container(
-                  width: 340,
-                  height: 574,
-                  decoration: BoxDecoration(
-                    color: Color(
-                      0xff64a676,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
+    return Container(
+      width: 400,
+      height: 587,
+      padding: new EdgeInsets.all(10.0),
+      child: Stack(alignment: Alignment.center, children: <Widget>[
+        Positioned(
+          child: Container(
+              width: 380,
+              height: 587,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
                 ),
+                color: Color.fromRGBO(77, 175, 140, 1),
               ),
-              Positioned(
-                left: 33,
-                top: 561,
-                child: Text(
-                  "10.12.2021",
-                  style: TextStyle(
-                    color: Color(
-                      0xffffffff,
+              child: new Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                            margin: EdgeInsets.only(right: 4.0, left: 15.0),
+                            width: 155,
+                            height: 155,
+                            decoration: BoxDecoration(
+                                  image : DecorationImage(
+                                      image: AssetImage(images + 'janek.png'),
+                                      fit: BoxFit.fitWidth
+                                  ),
+                                  borderRadius : BorderRadius.all(Radius.elliptical(150, 150)),
+                            ))),
+        Positioned(
+            child: Text('Jan Biskupski', textAlign: TextAlign.center, style: TextStyle(
+                color: Color.fromRGBO(254, 254, 254, 1),
+                fontFamily: 'Manrope',
+                fontSize: 24,
+                letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
+                fontWeight: FontWeight.normal,
+                height: 1,
+            ),)),
+                    OneTextCards(
+                      left: "Wiek:",
+                      right: "21",
                     ),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 463,
-                child: Text(
-                  "179 cm",
-                  style: TextStyle(
-                    color: Color(
-                      0xffffffff,
+                    OneTextCards(
+                      left: "Waga:",
+                      right: "77 KG",
                     ),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 370,
-                child: Text(
-                  "77 kg",
-                  style: TextStyle(
-                    color: Color(
-                      0xffffffff,
+                    OneTextCards(
+                      left: "Wzrost:",
+                      right: "179 CM",
                     ),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 505,
-                child: Text(
-                  "OSTATNIA WIZYTA:",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
+                    OneTextCards(
+                      left: "Ostatnia wizyta:",
+                      right: "10.12.2021",
                     ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 407,
-                child: Text(
-                  "WZROST:",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 318,
-                child: Text(
-                  "WAGA:",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 130,
-                top: 140,
-                child: Text(
-                  "Jan BISKUPSKI",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 229,
-                child: Text(
-                  "WIEK:",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 276,
-                child: Text(
-                  "21",
-                  style: TextStyle(
-                    color: Color(
-                      0xffffffff,
-                    ),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Container(),
-            ],
-          ),
-        );
-      }),
-      theme: ThemeData(
-        textTheme: TextTheme(),
-      ),
-      debugShowCheckedModeBanner: false,
+                  ])),
+        ),
+      ]),
     );
   }
 }

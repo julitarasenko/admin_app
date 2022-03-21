@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import '../core/httpClientGet.dart';
 
-class Sick_LeaveButtonWidget extends StatefulWidget {
+class InfoOOddzialeWidget extends StatefulWidget {
   @override
-  _Sick_LeaveButtonWidgetState createState() => _Sick_LeaveButtonWidgetState();
+  _InfoOOddzialeWidgetState createState() => _InfoOOddzialeWidgetState();
 }
 
-class _Sick_LeaveButtonWidgetState extends State<Sick_LeaveButtonWidget> {
+class _InfoOOddzialeWidgetState extends State<InfoOOddzialeWidget> {
   @override
   Widget build(BuildContext context) {
-    // Figma Flutter Generator ButtonWidget - INSTANCE
 
     return Container(
         width: 300,
@@ -31,16 +29,19 @@ class _Sick_LeaveButtonWidgetState extends State<Sick_LeaveButtonWidget> {
                           bottomRight: Radius.circular(20),
                         ),
                         color : Color.fromRGBO(254, 254, 254, 1),
-                        border: Border.all(
-                          color: const Color.fromRGBO(0, 0, 0, 1),
-                          width: 2,
-                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0x3f000000),
+                            blurRadius: 4,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
                       )
                   )
               ),Positioned(
                   top: 20,
-                  left: 84,
-                  child: Text('Twoje zwolnienia', textAlign: TextAlign.center, style: TextStyle(
+                  left: 130,
+                  child: Text('Info O Oddziale', textAlign: TextAlign.center, style: TextStyle(
                       color: Color.fromRGBO(38, 49, 57, 1),
                       fontFamily: 'Manrope',
                       fontSize: 16,

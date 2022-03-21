@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class vaccinewidget extends StatefulWidget {
+class VaccineWidget extends StatefulWidget {
   @override
-  _vaccinewidgetState createState() => _vaccinewidgetState();
+  _VaccineWidgetState createState() => _VaccineWidgetState();
 }
 
-class _vaccinewidgetState extends State<vaccinewidget> {
+class _VaccineWidgetState extends State<VaccineWidget> {
   @override
   Widget build(BuildContext context) {
 

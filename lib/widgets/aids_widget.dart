@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class aidswidget extends StatefulWidget {
+class AidsWidget extends StatefulWidget {
   @override
-  _aidswidgetState createState() => _aidswidgetState();
+  _AidsWidgetState createState() => _AidsWidgetState();
 }
 
-class _aidswidgetState extends State<aidswidget> {
+class _AidsWidgetState extends State<AidsWidget> {
   @override
   Widget build(BuildContext context) {
 
@@ -30,10 +30,13 @@ class _aidswidgetState extends State<aidswidget> {
                           bottomRight: Radius.circular(20),
                         ),
                         color : Color.fromRGBO(254, 254, 254, 1),
-                        border: Border.all(
-                          color: const Color.fromRGBO(0, 0, 0, 1),
-                          width: 2,
-                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(0x3f000000),
+                            blurRadius: 4,
+                            offset: Offset(0, 4),
+                          ),
+                        ],
                       )
                   )
               ),Positioned(
