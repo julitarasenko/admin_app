@@ -1,4 +1,5 @@
 // TODO: Should be deleted when any other screen will be added!
+import 'package:admin_app/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 
@@ -97,15 +98,6 @@ class _LoginScreenState extends State<LoginScreen> {
             alignment: AlignmentDirectional.center,
           )
         : Scaffold(
-            appBar: AppBar(
-              iconTheme: IconThemeData(
-                color: Colors.black, //change your color here
-              ),
-              automaticallyImplyLeading: true,
-              backgroundColor: Colors.white,
-              elevation: 0,
-            ),
-            backgroundColor: Colors.white,
             body: Padding(
               padding: EdgeInsets.symmetric(horizontal: 46.0),
               child: Form(
@@ -115,27 +107,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(bottom: 8.0),
+                      margin: EdgeInsets.only(bottom: 10.0),
                       child: Text(
                         'Log in.',
                         style: TextStyle(
                           fontSize: 35.0,
+                          fontFamily: 'Manrope',
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(bottom: 16.0),
-                      child: Text(
-                        'Log in with your data that you entered during your registration.',
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
                     UserSignDataTextField(
-                      fieldDescription: 'Your e-mail',
                       hintText: 'name@email.com',
                       onSaved: (value) {},
                       validatorFunction: (value) {
@@ -149,7 +131,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       controller: _emailTextEditingController,
                     ),
                     UserSignDataTextField(
-                      fieldDescription: 'Password',
                       hintText: 'at least 8 characters',
                       validatorFunction: (value) {},
                       onSaved: (value) {},
@@ -168,49 +149,21 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           )
                         : SizedBox.shrink(),
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 8),
-                      child: ButtonTheme(
-                        minWidth: 350.0,
-                        height: 48.0,
-                        child: RaisedButton(
-                          elevation: 8,
-                          child: Text(
-                            'LOG IN',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).pushNamed('/home-screen');
-                          },
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          color: Colors.black,
-                          textColor: Colors.white,
-                        ),
-                      ),
+                    ButtonWidget(
+                      text: 'LOG IN',
+                      colorText: Color(0xFFFEFEFE),
+                      colorButton: Color(0xFF4DAF8C),
+                      onPressed: () =>
+                          Navigator.of(context).pushNamed('/home-screen'),
                     ),
-                    Container(
-                      padding: EdgeInsets.symmetric(vertical: 8),
-                      child: ButtonTheme(
-                        minWidth: 350.0,
-                        height: 48.0,
-                        child: RaisedButton(
-                          elevation: 8,
-                          child: Text(
-                            'REJESTRACJA',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                              context,
-                              '/sign-up',
-                              ModalRoute.withName('/login')),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                          ),
-                          color: Colors.white,
-                          textColor: Colors.black,
-                        ),
+                    ButtonWidget(
+                      text: 'REJESTRACJA',
+                      colorText: Color(0xFF263139),
+                      colorButton: Color(0xFFFEFEFE),
+                      onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        '/sign-up',
+                        ModalRoute.withName('/login'),
                       ),
                     ),
                   ],
