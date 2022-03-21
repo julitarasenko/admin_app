@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:admin_app/configuration/loc_files.dart';
 
 class OneTextCards extends StatelessWidget {
-  final String? top;
-  final String? bottom;
+  final String top;
+  final String bottom;
 
   OneTextCards({
-    this.top,
-    this.bottom,
+    required this.top,
+    required this.bottom,
   });
 
   @override
