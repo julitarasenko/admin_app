@@ -13,7 +13,7 @@ class _EuropeanHealthCardState extends State<EuropeanHealthCard> {
     return Container(
       width: 400,
       height: 587,
-      padding: new EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(10.0),
       child: Stack(alignment: Alignment.center, children: <Widget>[
         Positioned(
           child: Container(
