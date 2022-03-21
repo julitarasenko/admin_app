@@ -8,7 +8,6 @@ class EuropeanHealthCard extends StatefulWidget {
 }
 
 class _EuropeanHealthCardState extends State<EuropeanHealthCard> {
-  // final GlobalKey<FormState> _formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,27 +20,23 @@ class _EuropeanHealthCardState extends State<EuropeanHealthCard> {
               width: 380,
               height: 587,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
+                borderRadius: BorderRadius.only(20),
                 color: Color.fromRGBO(77, 175, 140, 1),
               ),
-              child: new Column(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Align(
                         alignment: Alignment.center,
                         child: Container(
-                            margin: EdgeInsets.only(right: 4.0, left: 15.0),
+                            margin: EdgeInsets.only(right: 4.0, 
+                                 left: 15.0),
                             width: 155,
                             height: 155,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: new AssetImage(images + 'qrcode.png'),
+                                  image: AssetImage(images + 'qrcode.png'),
                                   fit: BoxFit.fitWidth),
                             ))),
                     OneTextCards(
