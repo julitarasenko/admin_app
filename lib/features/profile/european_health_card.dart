@@ -20,7 +20,7 @@ class _EuropeanHealthCardState extends State<EuropeanHealthCard> {
               width: 380,
               height: 587,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(20),
+                borderRadius: BorderRadius.circular(20),
                 color: Color.fromRGBO(77, 175, 140, 1),
               ),
               child: Column(
