@@ -13,34 +13,30 @@ class _OneInsuranceState extends State<OneInsurance> {
     return Container(
       width: 400,
       height: 487,
-      padding: new EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(10.0),
       child: Stack(alignment: Alignment.center, children: <Widget>[
         Positioned(
           child: Container(
               width: 380,
               height: 387,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20),
-                ),
+                borderRadius: BorderRadius.circular(20),
                 color: Color.fromRGBO(77, 175, 140, 1),
               ),
-              child: new Column(
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Align(
                         alignment: Alignment.topCenter,
                         child: Container(
-                            margin: EdgeInsets.only(right: 4.0, left: 15.0),
+                            margin: EdgeInsets.only(right: 4.0, 
+                                      left: 15.0),
                             width: 85,
                             height: 85,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: new AssetImage(images + 'pzu.png'),
+                                  image: AssetImage(images + 'pzu.png'),
                                   fit: BoxFit.fitWidth),
                             ))),
                     OneTextInsurance(
@@ -51,12 +47,13 @@ class _OneInsuranceState extends State<OneInsurance> {
                     Align(
                         alignment: Alignment.topCenter,
                         child: Container(
-                            margin: EdgeInsets.only(right: 4.0, left: 15.0),
+                            margin: EdgeInsets.only(right: 4.0, 
+                                       left: 15.0),
                             width: 155,
                             height: 155,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: new AssetImage(images + 'qrcode.png'),
+                                  image: AssetImage(images + 'qrcode.png'),
                                   fit: BoxFit.fitWidth),
                             ))),
                   ])),
