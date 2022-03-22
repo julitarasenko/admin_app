@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import '../core/httpClientGet.dart';
 
-class SanepidButtonWidget extends StatefulWidget {
+class ButtonWidget extends StatefulWidget {
   @override
-  _SanepidButtonWidgetState createState() => _SanepidButtonWidgetState();
+  _ButtonWidgetState createState() => _ButtonWidgetState();
 }
 
-class _SanepidButtonWidgetState extends State<SanepidButtonWidget> {
+class _ButtonWidgetState extends State<ButtonWidget> {
   @override
   Widget build(BuildContext context) {
+    // Figma Flutter Generator ButtonWidget - INSTANCE
 
     return Container(
         width: 300,
@@ -30,19 +31,16 @@ class _SanepidButtonWidgetState extends State<SanepidButtonWidget> {
                           bottomRight: Radius.circular(20),
                         ),
                         color : Color.fromRGBO(254, 254, 254, 1),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color(0x3f000000),
-                            blurRadius: 4,
-                            offset: Offset(0, 4),
-                          ),
-                        ],
+                        border: Border.all(
+                          color: const Color.fromRGBO(0, 0, 0, 1),
+                          width: 2,
+                        ),
                       )
                   )
               ),Positioned(
                   top: 20,
-                  left: 54,
-                  child: Text('Książeczka sanepidowska', textAlign: TextAlign.center, style: TextStyle(
+                  left: 72,
+                  child: Text('Twoje ubezpieczenie', textAlign: TextAlign.center, style: TextStyle(
                       color: Color.fromRGBO(38, 49, 57, 1),
                       fontFamily: 'Manrope',
                       fontSize: 16,
