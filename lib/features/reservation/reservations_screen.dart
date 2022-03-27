@@ -1,5 +1,7 @@
 import 'package:admin_app/features/reservation/reservation_card.dart';
 import 'package:flutter/material.dart';
+import 'package:admin_app/features/hospital_ward/widget/text_field.dart';
+
 
 class ReservationScreen extends StatefulWidget {
   @override
@@ -50,6 +52,7 @@ class _ReservationScreenState extends State<ReservationScreen> {
               reservation: 'Rezerwacja dnia 05.11.2021 o 11:15',
               doctor: 'Lek. Andrzej Mors',
             ),
+            TextFieldTemplate(hintText: 'Jakis tekst',height:3,colorBorder: Colors.white,colorInput:Colors.white70 ,colorText: Colors.green,marginVertical: 10,marginHorizontal:0),
             SizedBox(height: 15),
             ReservationCard(
               reservation: 'Rezerwacja dnia 21.07.2021 o 08:45',

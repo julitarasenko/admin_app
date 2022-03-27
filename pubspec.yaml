@@ -51,7 +51,7 @@ flutter:
 
     - family: Circe
       fonts:
-        - asset: assets/fonts/Circe.otf
+        - asset: assets/fonts/Circe.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
