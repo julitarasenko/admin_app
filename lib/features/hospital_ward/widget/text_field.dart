@@ -25,7 +25,7 @@ class TextFieldTemplate extends StatelessWidget {
       height: height! * 24.0,
       child: TextField(
         maxLines: height!,
-        textAlign: TextAlign.center,
+        textAlign: TextAlign.left,
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.0),

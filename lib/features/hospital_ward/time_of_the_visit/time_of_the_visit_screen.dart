@@ -43,17 +43,17 @@ class _VisitTimeScreenState extends State<VisitTimeScreen> {
          ],
        ),
        Container(
-         margin: EdgeInsets.only(bottom: 8.0,top:12.0,right: 150.0),
+         margin: EdgeInsets.only(bottom: 8.0,top:12.0,right: 140.0),
          child: Text(
            'Informacja dla lekarza:',
            style: TextStyle(
-             fontSize: 12.0,
+             fontSize: 14.0,
              fontFamily: 'Manrope',
              fontWeight: FontWeight.w800,
            ),
          ),
        ),
-       TextFieldTemplate(hintText: '',height:3,colorBorder: Colors.white,colorInput:Colors.white70 ,colorText: Colors.black,marginVertical: 10,marginHorizontal:30),
+       TextFieldTemplate(hintText: '',height:3,colorBorder: Colors.white,colorInput:Colors.white70 ,colorText: Colors.black,marginVertical: 10,marginHorizontal:55),
        SizedBox(height: 15),
        ButtonWidget(text: 'ZAREZERWUJ', colorText: Color(0xFFFEFEFE), colorButton: Color(0xFF4DAF8C), onPressed: (){})
      ],
