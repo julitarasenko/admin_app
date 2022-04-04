@@ -1,6 +1,7 @@
 import 'package:admin_app/features/reservation/reservations_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:admin_app/features/hospital_ward/time_of_the_visit/time_of_the_visit_screen.dart';
+import 'package:admin_app/features/hospital_ward/calendar/calendar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -26,21 +27,21 @@ class _HomeScreenState extends State<HomeScreen> {
         fontWeight: FontWeight.bold,
       ),
     ),
-    Text(
+    Calendar(),
+  /*  Text(
       'Index 3: Karta zdrowia',
       style: TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.bold,
       ),
-    ),
-/*    Text(
+    ),*/
+    Text(
       'Index 4: Profil',
       style: TextStyle(
         fontSize: 30,
         fontWeight: FontWeight.bold,
       ),
-    ),*/
-  VisitTimeScreen(),
+    ),
   ];
 
   void onTabTapped(int index) {

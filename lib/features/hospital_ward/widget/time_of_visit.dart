@@ -23,7 +23,7 @@ class OneTimeOfVisit extends StatelessWidget {
           child: Text(
             left + "-" + right,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 16,
               fontFamily: "Manrope",
               fontWeight: FontWeight.w800,
             ),

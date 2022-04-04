@@ -3,6 +3,7 @@ import 'package:admin_app/features/hospital_ward/widget/text_field.dart';
 import 'package:admin_app/features/hospital_ward/widget/time_of_visit.dart';
 import 'package:admin_app/widgets/button_widget.dart';
 
+
 class VisitTimeScreen extends StatefulWidget {
   @override
   _VisitTimeScreenState createState() => _VisitTimeScreenState();
@@ -13,7 +14,8 @@ class _VisitTimeScreenState extends State<VisitTimeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Scaffold(
+        body: ListView(
         padding: EdgeInsets.symmetric(vertical: 100),
         children: [Column(
      children: <Widget>[
@@ -55,10 +57,11 @@ class _VisitTimeScreenState extends State<VisitTimeScreen> {
        ),
        TextFieldTemplate(hintText: '',height:3,colorBorder: Colors.white,colorInput:Colors.white70 ,colorText: Colors.black,marginVertical: 10,marginHorizontal:55),
        SizedBox(height: 15),
-       ButtonWidget(text: 'ZAREZERWUJ', colorText: Color(0xFFFEFEFE), colorButton: Color(0xFF4DAF8C), onPressed: (){})
+       ButtonWidget(text: 'ZAREZERWUJ', colorText: Color(0xFFFEFEFE), colorButton: Color(0xFF4DAF8C), onPressed: (){}),
      ],
     ),
     ],
+        ),
    );
   }
 }
