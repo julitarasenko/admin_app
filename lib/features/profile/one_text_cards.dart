@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:admin_app/configuration/loc_files.dart';
 
 class OneTextCards extends StatelessWidget {
-  final String top;
-  final String bottom;
-
   OneTextCards({
     required this.top,
     required this.bottom,
   });
-
+  final String top;
+  final String bottom;
   @override
   Widget build(BuildContext context) {
     return Material(

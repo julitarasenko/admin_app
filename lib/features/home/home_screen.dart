@@ -1,7 +1,8 @@
-import 'package:admin_app/features/reservation/reservations_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:admin_app/features/hospital_ward/time_of_the_visit/time_of_the_visit_screen.dart';
+import 'package:admin_app/features/hospital/hospital_screen.dart';
 import 'package:admin_app/features/hospital_ward/calendar/calendar.dart';
+import 'package:admin_app/features/reservation/reservations_screen.dart';
+import 'package:admin_app/features/sick_leave/screens/sick_leave_screen.dart';
+import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -12,23 +13,12 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 4;
 
   final List _children = [
-    Text(
-      'Index 0: Szpital',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+    HospitalScreen(),
+    //ReservationDoctorScreen(),
     ReservationScreen(),
-    Text(
-      'Index 2: Czat',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+    SickLeaveScreen(),
     Calendar(),
-  /*  Text(
+    /*  Text(
       'Index 3: Karta zdrowia',
       style: TextStyle(
         fontSize: 30,

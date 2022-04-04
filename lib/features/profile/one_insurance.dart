@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:admin_app/features/profile/one_text_insurance.dart';
 import 'package:admin_app/configuration/loc_files.dart';
+import 'package:admin_app/features/profile/one_text_insurance.dart';
+import 'package:flutter/material.dart';
 
 class OneInsurance extends StatefulWidget {
   @override
@@ -30,8 +30,7 @@ class _OneInsuranceState extends State<OneInsurance> {
                     Align(
                         alignment: Alignment.topCenter,
                         child: Container(
-                            margin: EdgeInsets.only(right: 4.0, 
-                                      left: 15.0),
+                            margin: EdgeInsets.only(right: 4.0, left: 15.0),
                             width: 85,
                             height: 85,
                             decoration: BoxDecoration(
@@ -47,8 +46,7 @@ class _OneInsuranceState extends State<OneInsurance> {
                     Align(
                         alignment: Alignment.topCenter,
                         child: Container(
-                            margin: EdgeInsets.only(right: 4.0, 
-                                       left: 15.0),
+                            margin: EdgeInsets.only(right: 4.0, left: 15.0),
                             width: 155,
                             height: 155,
                             decoration: BoxDecoration(
