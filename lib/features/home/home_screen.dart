@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ),
     Calendar(),
-  /*  Text(
+    /*  Text(
       'Index 3: Karta zdrowia',
       style: TextStyle(
         fontSize: 30,
