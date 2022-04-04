@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:admin_app/configuration/loc_files.dart';
 
-class OneTextCards extends StatelessWidget {
+class OneSanepidText extends StatelessWidget {
   final String top;
   final String bottom;
 
-  OneTextCards({
+  OneSanepidText({
     required this.top,
     required this.bottom,
   });
@@ -16,7 +15,7 @@ class OneTextCards extends StatelessWidget {
       type: MaterialType.transparency,
       child: Container(
         width: 400,
-        height: 55,
+        height: 75,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,7 +26,7 @@ class OneTextCards extends StatelessWidget {
                 alignment: Alignment.topLeft,
                 child: Container(
                   width: 350,
-                  height: 45,
+                  height: 65,
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +34,7 @@ class OneTextCards extends StatelessWidget {
                     children: [
                       Container(
                         width: 252,
-                        height: 50,
+                        height: 70,
                         child: Stack(
                           children: [
                             Positioned.fill(

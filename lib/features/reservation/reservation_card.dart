@@ -44,7 +44,7 @@ class ReservationCard extends StatelessWidget {
                 style: TextStyle(
                   color:
                       isPastReservation ? Color(0xFF263139) : Color(0xFFFEFEFE),
-                  fontSize: 13,
+                  fontSize: 12,
                   fontFamily: 'Manrope',
                   fontWeight: FontWeight.w700,
                 ),
