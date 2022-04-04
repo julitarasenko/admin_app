@@ -36,7 +36,7 @@ class _OneInsuranceState extends State<OneInsurance> {
                             height: 85,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage(images + 'pzu.png'),
+                                  image: AssetImage('images/' + 'pzu.png'),
                                   fit: BoxFit.fitWidth),
                             ))),
                     OneTextInsurance(

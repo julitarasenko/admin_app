@@ -1,4 +1,4 @@
-import 'package:admin_app/configuration%20folder/loc_files.dart';
+import 'package:admin_app/configuration/loc_files.dart';
 import 'package:flutter/material.dart';
 
 
