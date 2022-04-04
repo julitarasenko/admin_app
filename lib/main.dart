@@ -23,7 +23,6 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context) => SignupScreen(),
         '/home-screen': (context) => HomeScreen(),
         '/reservation': (context) => ReservationScreen(),
-
       },
     );
   }
