@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:admin_app/widgets/button_widget.dart';
+import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 
 class HospitalWardScreen extends StatefulWidget {
@@ -10,27 +11,75 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: ListView(
+        padding: EdgeInsets.all(50),
         children: [
-          Container(
-            padding: EdgeInsets.only(
-              top: 50.0,
-              left: 50.0,
-              right: 50.0,
-            ),
-            child: Text(
-              "Szukać",
-              textDirection: TextDirection.ltr,
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                color: Color(0xff263139),
-                fontSize: 24,
-                fontFamily: "Manrope",
-                fontWeight: FontWeight.w700,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              profile_widget(),
+              ButtonWidget(
+                text: 'Szpitalny Oddział Ratunkowy',
+                colorText: Color(0xFF263139),
+                colorButton: Color(0xFFFEFEFE),
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/sign-up',
+                  ModalRoute.withName('/login'),
+                ),
               ),
-            ),
+              ButtonWidget(
+                text: 'Oddział Gruźlicy, Chorób Płuc i Alergologii III',
+                colorText: Color(0xFF263139),
+                colorButton: Color(0xFFFEFEFE),
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/sign-up',
+                  ModalRoute.withName('/login'),
+                ),
+              ),
+              ButtonWidget(
+                text: 'Oddział Onkologii Klinicznej i Chemioterapii',
+                colorText: Color(0xFF263139),
+                colorButton: Color(0xFFFEFEFE),
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/sign-up',
+                  ModalRoute.withName('/login'),
+                ),
+              ),
+              ButtonWidget(
+                text: 'Oddział Gruźlicy i Chorób Płuc I',
+                colorText: Color(0xFF263139),
+                colorButton: Color(0xFFFEFEFE),
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/sign-up',
+                  ModalRoute.withName('/login'),
+                ),
+              ),
+              ButtonWidget(
+                text: 'Oddział Chirurgii Urazowo – Ortopedycznej V',
+                colorText: Color(0xFF263139),
+                colorButton: Color(0xFFFEFEFE),
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/sign-up',
+                  ModalRoute.withName('/login'),
+                ),
+              ),
+              ButtonWidget(
+                text: 'Klinika Chirurgii Klatki Piersiowej',
+                colorText: Color(0xFF263139),
+                colorButton: Color(0xFFFEFEFE),
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/sign-up',
+                  ModalRoute.withName('/login'),
+                ),
+              ),
+            ],
           ),
         ],
       ),
