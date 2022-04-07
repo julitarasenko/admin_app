@@ -11,12 +11,12 @@ class StartScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Stack(
-          children: [
+          children: <Widget>[
             Align(
-              alignment: Alignment.topCenter,
+              alignment: Alignment(0, -1),
               child: Container(
-                height: 380,
-                width: 380,
+                height: 450,
+                width: 450,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image:

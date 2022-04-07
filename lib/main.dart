@@ -1,4 +1,5 @@
 import 'package:admin_app/features/home/home_screen.dart';
+import 'package:admin_app/features/hospital/hospital_ward_screen.dart';
 import 'package:admin_app/features/login/screens/login_screen.dart';
 import 'package:admin_app/features/login/screens/signup_screen.dart';
 import 'package:admin_app/features/reservation/reservations_screen.dart';
@@ -7,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
-  initializeDateFormatting().then((_) =>runApp(MyApp()));
+  initializeDateFormatting().then((_) => runApp(MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context) => SignupScreen(),
         '/home-screen': (context) => HomeScreen(),
         '/reservation': (context) => ReservationScreen(),
+        '/hospital_ward': (context) => HospitalWardScreen(),
       },
     );
   }
