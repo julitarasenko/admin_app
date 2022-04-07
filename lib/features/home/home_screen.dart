@@ -1,7 +1,7 @@
 import 'package:admin_app/features/hospital/hospital_screen.dart';
 import 'package:admin_app/features/hospital_ward/calendar/calendar.dart';
 import 'package:admin_app/features/reservation/reservations_screen.dart';
-import 'package:admin_app/features/sick_leave/screens/sick_leave_screen.dart';
+import 'package:admin_app/features/profile/sick_leave/screens/sick_leave_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
     ReservationScreen(),
     SickLeaveScreen(),
     Calendar(),
-    /*  Text(
+     /* Text(
       'Index 3: Karta zdrowia',
       style: TextStyle(
         fontSize: 30,
