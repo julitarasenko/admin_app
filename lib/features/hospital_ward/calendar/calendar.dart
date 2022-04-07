@@ -32,7 +32,7 @@ class _CalendarState extends State<Calendar> {
               children: [
                 SizedBox(height: 125),
                 Container(
-                  margin: const EdgeInsets.all(28.0),
+                  margin: EdgeInsets.all(28.0),
                   color: Color(0xFFE5E9EC),
                   child: TableCalendar(
                     locale: 'pl_PL',
@@ -46,7 +46,7 @@ class _CalendarState extends State<Calendar> {
                           DateFormat.yMMMM(locale).format(date),
                     ),
                     calendarFormat: CalendarFormat.month,
-                    weekendDays:  [DateTime.sunday, 6],
+                    weekendDays: [DateTime.sunday, 6],
                     startingDayOfWeek: StartingDayOfWeek.monday,
                     daysOfWeekStyle: DaysOfWeekStyle(
                       dowTextFormatter: (date, locale) =>
@@ -82,10 +82,12 @@ class _CalendarState extends State<Calendar> {
                     onDaySelected: (selectedDay, focusedDay) {
                       // as per the documentation
                       if (!isSameDay(selectedCalendarDate, selectedDay)) {
-                        setState(() {
-                          selectedCalendarDate = selectedDay;
-                          _focusedCalendarDate = focusedDay;
-                        });
+                        setState(
+                          () {
+                            selectedCalendarDate = selectedDay;
+                            _focusedCalendarDate = focusedDay;
+                          },
+                        );
                       }
                     },
                     //  daysOfWeekStyle: DaysOfWeekStyle(),
@@ -96,14 +98,16 @@ class _CalendarState extends State<Calendar> {
           ),
           SizedBox(height: 5),
           ButtonWidget(
-              text: 'WYBIERZ DATĘ',
-              colorText: Colors.black,
-              colorButton: Colors.white,
-               onPressed: () => {fun(selectedCalendarDate),
-           //   onPressed: () {
-          //      Navigator.push(context,
-           //         MaterialPageRoute(builder: (context) => VisitTimeScreen()));
-              }),
+            text: 'WYBIERZ DATĘ',
+            colorText: Colors.black,
+            colorButton: Colors.white,
+            onPressed: () => {
+              fun(selectedCalendarDate),
+              //   onPressed: () {
+              //      Navigator.push(context,
+              //         MaterialPageRoute(builder: (context) => VisitTimeScreen()));
+            },
+          ),
         ],
       ),
     );

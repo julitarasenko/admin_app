@@ -21,7 +21,10 @@ class TextFieldTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: marginVertical!, horizontal:marginHorizontal!,),
+      margin: EdgeInsets.symmetric(
+        vertical: marginVertical!,
+        horizontal: marginHorizontal!,
+      ),
       height: height! * 24.0,
       child: TextField(
         maxLines: height!,

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:admin_app/configuration/loc_files.dart';
 
-class OneTextInsurance extends StatelessWidget {
+class OneSanepidText extends StatelessWidget {
   final String top;
   final String bottom;
 
-  OneTextInsurance({
+  OneSanepidText({
     required this.top,
     required this.bottom,
   });
@@ -16,7 +15,7 @@ class OneTextInsurance extends StatelessWidget {
       type: MaterialType.transparency,
       child: Container(
         width: 400,
-        height: 90,
+        height: 75,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,8 +25,8 @@ class OneTextInsurance extends StatelessWidget {
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Container(
-                  width: 400,
-                  height: 90,
+                  width: 350,
+                  height: 65,
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -35,16 +34,16 @@ class OneTextInsurance extends StatelessWidget {
                     children: [
                       Container(
                         width: 252,
-                        height: 90,
+                        height: 70,
                         child: Stack(
                           children: [
                             Positioned.fill(
                               child: Align(
-                                alignment: Alignment.topCenter,
+                                alignment: Alignment.topLeft,
                                 child: Text(
                                   top!,
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 17,
                                       fontFamily: "Manrope-ExtraBold",
                                       fontWeight: FontWeight.bold),
@@ -53,13 +52,13 @@ class OneTextInsurance extends StatelessWidget {
                             ),
                             Positioned.fill(
                               child: Align(
-                                alignment: Alignment.bottomRight,
+                                alignment: Alignment.bottomLeft,
                                 child: Text(
                                   bottom!,
                                   style: TextStyle(
                                     fontFamily: "Manrope-ExtraBold",
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontSize: 17,
                                   ),
                                 ),
