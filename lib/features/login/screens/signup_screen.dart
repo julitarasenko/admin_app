@@ -119,7 +119,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     UserSignDataTextField(
                       hintText: 'name@email.com',
                       onSaved: (value) {},

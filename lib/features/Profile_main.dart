@@ -6,10 +6,10 @@ import 'package:admin_app/widgets/aids_widget.dart';
 import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../widgets/insurance_button_widget.dart';
-import '../widgets/european_health_insurance_card_button_widget.dart';
-import '../widgets/sanepid_button_widget.dart';
-import '../widgets/sick_leave_button_widget.dart';
+import 'package:admin_app/widgets/insurance_button_widget.dart';
+import 'package:admin_app/widgets/european_health_insurance_card_button_widget.dart';
+import 'package:admin_app/widgets/sanepid_button_widget.dart';
+import 'package:admin_app/widgets/sick_leave_button_widget.dart';
 
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
@@ -52,12 +52,11 @@ class _ProfilWidgetState extends State<ProfilWidget> {
     return Container(
         width: 375,
         height: 812,
-
         child: Stack(alignment: Alignment.center, children: <Widget>[
           Positioned(
             top: 50,
             left: 38,
-            child:ProfileWidget(),
+            child: ProfileWidget(),
           ),
           Positioned(
             top: 374,

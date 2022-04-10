@@ -6,6 +6,7 @@ import 'package:admin_app/features/start_screen.dart';
 import 'package:admin_app/features/profile_main.dart';
 import 'package:flutter/material.dart';
 import 'package:admin_app/features/sick_leave/screens/sick_leave_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
