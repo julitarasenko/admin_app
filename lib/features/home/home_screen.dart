@@ -1,3 +1,4 @@
+import 'package:admin_app/features/Profile_main.dart';
 import 'package:admin_app/features/reservation/reservations_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -32,13 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
         fontWeight: FontWeight.bold,
       ),
     ),
-    Text(
-      'Index 4: Profil',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+    ProfilWidget()
   ];
 
   void onTabTapped(int index) {

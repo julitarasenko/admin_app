@@ -2,12 +2,12 @@ import 'package:admin_app/configuration%20folder/loc_files.dart';
 import 'package:flutter/material.dart';
 
 
-class profile_widget extends StatefulWidget {
+class ProfileWidget extends StatefulWidget {
   @override
-  _profile_widgetState createState() => _profile_widgetState();
+  _ProfileWidgetState createState() => _ProfileWidgetState();
 }
 
-class _profile_widgetState extends State<profile_widget> {
+class _ProfileWidgetState extends State<ProfileWidget> {
   @override
   Widget build(BuildContext context) {
 
@@ -46,7 +46,7 @@ class _profile_widgetState extends State<profile_widget> {
                                     height: 150,
                                     decoration: BoxDecoration(
                                       image : DecorationImage(
-                                          image: new AssetImage(images + 'janek.png'),
+                                          image: AssetImage(images + 'janek.png'),
                                           fit: BoxFit.fitWidth
                                       ),
                                       borderRadius : BorderRadius.all(Radius.elliptical(150, 150)),

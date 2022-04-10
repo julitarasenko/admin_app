@@ -1,15 +1,15 @@
 import 'dart:io';
 
 import 'package:admin_app/configuration%20folder/loc_files.dart';
-import 'package:admin_app/widgets/VaccineWidget.dart';
-import 'package:admin_app/widgets/aidswidget.dart';
+import 'package:admin_app/widgets/vaccine_widget.dart';
+import 'package:admin_app/widgets/aids_widget.dart';
 import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../widgets/ButtonWidget.dart';
-import '../widgets/European_Health_Insurance_CardButtonWidget.dart';
-import '../widgets/SanepidButtonWidget.dart';
-import '../widgets/SickLeaveButtonWidget.dart';
+import '../widgets/insurance_button_widget.dart';
+import '../widgets/european_health_insurance_card_button_widget.dart';
+import '../widgets/sanepid_button_widget.dart';
+import '../widgets/sick_leave_button_widget.dart';
 
 void main() {
   FlutterError.onError = (FlutterErrorDetails details) {
@@ -52,18 +52,16 @@ class _ProfilWidgetState extends State<ProfilWidget> {
     return Container(
         width: 375,
         height: 812,
-        decoration: const BoxDecoration(
-          color: Color.fromRGBO(255, 255, 255, 1),
-        ),
+
         child: Stack(alignment: Alignment.center, children: <Widget>[
           Positioned(
-              top: 50,
-              left: 38,
-              child:profile_widget(),
+            top: 50,
+            left: 38,
+            child:ProfileWidget(),
           ),
           Positioned(
             top: 374,
-            child: ButtonWidget(),
+            child: InsuranceButtonWidget(),
           ),
           Positioned(
             top: 442,
@@ -71,7 +69,7 @@ class _ProfilWidgetState extends State<ProfilWidget> {
           ),
           Positioned(
             top: 510,
-            child: European_Health_Insurance_CardButtonWidget(),
+            child: EuropeanHealthInsuranceCardButtonWidget(),
           ),
           Positioned(
             top: 578,
