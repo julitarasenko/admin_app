@@ -1,3 +1,2 @@
 import 'package:flutter/material.dart';
-
-const String images = 'images/';
+const String images='images/';
