@@ -12,9 +12,10 @@ class InfoLabelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 152,
-        height: 30,
-        child: Stack(children: <Widget>[
+      width: 152,
+      height: 30,
+      child: Stack(
+        children: <Widget>[
           Positioned(
               top: 0,
               left: 0,
@@ -39,6 +40,8 @@ class InfoLabelWidget extends StatelessWidget {
                     fontWeight: FontWeight.normal,
                     height: 1),
               )),
-        ]));
+        ],
+      ),
+    );
   }
 }
