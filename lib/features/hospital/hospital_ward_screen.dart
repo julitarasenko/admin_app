@@ -1,6 +1,7 @@
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:admin_app/core/http_client_get.dart';
 
 class HospitalWardScreen extends StatefulWidget {
   @override
@@ -10,6 +11,10 @@ class HospitalWardScreen extends StatefulWidget {
 class _HospitalWardScreenState extends State<HospitalWardScreen> {
   @override
   Widget build(BuildContext context) {
+    final arguments = (ModalRoute.of(context)?.settings.arguments ??
+        <String, dynamic>{}) as Map;
+
+    print(arguments['text']);
     return Scaffold(
       body: ListView(
         padding: EdgeInsets.all(50),
@@ -18,7 +23,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              profile_widget(),
+              ProfileWidget(text: arguments['text'], text2: arguments['text2']),
               ButtonWidget(
                 text: 'Szpitalny Oddział Ratunkowy',
                 colorText: Color(0xFF263139),

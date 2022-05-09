@@ -14,7 +14,8 @@ dependencies:
   syncfusion_flutter_calendar: 19.4.56
   table_calendar: ^3.0.2
   http: 0.13.4
-
+  dio: ^4.0.6
+  auto_size_text: ^3.0.0
   logger: ^1.0.0
   form_validator: ">=0.1.1 <2.0.0"
 
