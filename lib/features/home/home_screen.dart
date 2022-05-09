@@ -1,3 +1,5 @@
+import 'package:admin_app/features/about_unit/about_unit.dart';
+import 'package:admin_app/features/health_card/screens/health_card_screen.dart';
 import 'package:admin_app/features/reservation/reservations_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -25,20 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
         fontWeight: FontWeight.bold,
       ),
     ),
-    Text(
-      'Index 3: Karta zdrowia',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-    Text(
-      'Index 4: Profil',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
+    HealthCardScreen(),
+    AboutUnit(),
   ];
 
   void onTabTapped(int index) {

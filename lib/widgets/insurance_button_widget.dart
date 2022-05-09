@@ -49,6 +49,7 @@ class _InsuranceButtonWidgetState extends State<InsuranceButtonWidget> {
                       height: 1),
                 )),
           ],
-        ));
+        ),
+    );
   }
 }

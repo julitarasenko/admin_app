@@ -1,81 +1,191 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
-import 'package:admin_app/features/health_card/screens/one_text_cards.dart';
+import 'package:admin_app/configuration/loc_files.dart';
 
-class HealthCard extends StatefulWidget {
-  @override
-  _HealthCardState createState() => _HealthCardState();
-}
+class HealthCard extends StatelessWidget {
+  final String name;
+  final int age;
+  final int weight;
+  final int height;
+  final String lastvisit;
 
-class _HealthCardState extends State<HealthCard> {
-  // final GlobalKey<FormState> _formKey = GlobalKey();
+  HealthCard({
+    required this.name,
+    required this.age,
+    required this.weight,
+    required this.height,
+    required this.lastvisit,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 400,
-      height: 587,
-      padding: EdgeInsets.all(10.0),
-      child: Stack(
-        alignment: Alignment.center,
-        children: <Widget>[
-          Positioned(
-            child: Container(
-                width: 380,
-                height: 587,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(77, 175, 140, 1),
-                ),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Align(
-                          alignment: Alignment.center,
-                          child: Container(
-                              margin: EdgeInsets.only(right: 4.0, left: 15.0),
-                              width: 155,
-                              height: 155,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(images + 'janek.png'),
-                                    fit: BoxFit.fitWidth),
-                                borderRadius: BorderRadius.circular(150),
-                              ))),
-                      Positioned(
-                          child: Text(
-                        'Jan Biskupski',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Color.fromRGBO(254, 254, 254, 1),
-                          fontFamily: 'Manrope',
-                          fontSize: 24,
-                          letterSpacing:
-                              0 /*percentages not used in flutter. defaulting to zero*/,
-                          fontWeight: FontWeight.normal,
-                          height: 1,
+        child: Align(
+          alignment: Alignment.topLeft,
+          child: Container(
+            width: 300,
+            height: 334,
+            decoration: BoxDecoration(
+              color: Color(0xFF4DAF8C),
+              borderRadius: BorderRadius.circular(20),
+              shape: BoxShape.rectangle,
+            ),
+            alignment: AlignmentDirectional(0, 0),
+            child: Stack(
+              alignment: AlignmentDirectional(0, 0),
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(0, -0.8),
+                  child: Container(
+                    width: 83,
+                    height: 83,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEEEEEE),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                              image: AssetImage(images + 'janek.png'),
+                              fit: BoxFit.fitWidth),
                         ),
-                      )),
-                      OneTextCards(
-                        left: "Wiek:",
-                        right: "21",
+                    ),
+                  ),
+                Align(
+                  alignment: AlignmentDirectional(0, -0.23),
+                  child: Text(
+                    'Jan Biskupski',
+                    style: TextStyle(
+                      fontFamily: 'Manrope',
+                      color: Color(0xFFFEFEFE),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-0.5, 0.6),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
+                            child: Text(
+                              'Wiek:',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFF263139),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            '21',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Manrope',
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
                       ),
-                      OneTextCards(
-                        left: "Waga:",
-                        right: "77 KG",
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 1, 0),
+                            child: Text(
+                              'Waga:',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFF263139),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            child: Text(
+                              '77 kg',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFFFEFEFE),
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      OneTextCards(
-                        left: "Wzrost:",
-                        right: "179 CM",
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 1, 0),
+                            child: Text(
+                              'Wzrost:',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFF263139),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            child: Text(
+                              '179 cm',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFFFEFEFE),
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      OneTextCards(
-                        left: "Ostatnia wizyta:",
-                        right: "10.12.2021",
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 1, 0),
+                            child: Text(
+                              'Ostatnia wizyta:',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFF263139),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            child: Text(
+                              '10.12.2021',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFFFEFEFE),
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ])),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-        ],
-      ),
+        )
+
     );
   }
 }

@@ -12,35 +12,40 @@ class InfoLabelWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 152,
-      height: 30,
-      child: Stack(
-        children: <Widget>[
-          Positioned(
-              top: 0,
-              left: 0,
-              child: Container(
-                  width: 152,
-                  height: 30,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(40),
-                    color: Color.fromRGBO(77, 175, 140, 1),
-                  ))),
-          Positioned(
-              top: 6,
-              left: 89,
-              child: Text(
-                label,
-                textAlign: TextAlign.left,
-                style: TextStyle(
-                    color: Color.fromRGBO(254, 254, 254, 1),
-                    fontFamily: 'Manrope',
-                    fontSize: 14,
-                    letterSpacing: 0,
-                    fontWeight: FontWeight.normal,
-                    height: 1),
-              )),
-        ],
+      alignment: AlignmentDirectional(-1, 0.1),
+      margin: EdgeInsets.only(bottom: 8),
+      child: Padding(
+        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+        child: Container(
+          width: 100,
+          height: 30,
+          constraints: BoxConstraints(
+            maxWidth: 100,
+            maxHeight: 30,
+          ),
+          decoration: BoxDecoration(
+            color: Color(0xFF4DAF8C),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(0),
+              bottomRight: Radius.circular(40),
+              topLeft: Radius.circular(0),
+              topRight: Radius.circular(40),
+            ),
+          ),
+          alignment: AlignmentDirectional(0.050000000000000044, 0),
+          child: Align(
+            alignment: AlignmentDirectional(0.05, 0),
+            child: Text(
+              label,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Manrope',
+                color: Color(0xFFFEFEFE),
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
