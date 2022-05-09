@@ -11,6 +11,21 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Szpitale',
+          style: TextStyle(
+            color: Color(0xFF263139),
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Color(0xFF263139),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: ListView(
         padding: EdgeInsets.all(50),
         children: [
