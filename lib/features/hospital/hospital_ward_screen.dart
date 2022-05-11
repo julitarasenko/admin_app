@@ -1,7 +1,6 @@
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:admin_app/core/http_client_get.dart';
 
 class HospitalWardScreen extends StatefulWidget {
   final String text;
