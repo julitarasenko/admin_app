@@ -1,18 +1,16 @@
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:admin_app/core/http_client_get.dart';
 
 class ProfileScreen extends StatefulWidget {
-  final String text;
-  final String text2;
+  final String name;
+  final String address;
   ProfileScreen({
-    required this.text,
-    required this.text2,
+    required this.name,
+    required this.address,
   });
   @override
   _ProfileScreenState createState() => _ProfileScreenState();
-
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
@@ -41,7 +39,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ProfileWidget(text: widget.text, text2: widget.text2),
+              ProfileWidget(name: widget.name, address: widget.address),
               ButtonWidget(
                 text: 'TWOJE UBEZPIECZENIE',
                 colorText: Color(0xFF263139),

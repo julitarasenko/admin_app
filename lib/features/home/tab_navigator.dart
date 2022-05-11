@@ -1,9 +1,9 @@
 import 'package:admin_app/features/hospital/hospital_screen.dart';
-import 'package:admin_app/features/hospital_ward/calendar/calendar.dart';
 import 'package:admin_app/features/reservation/reservations_screen.dart';
 import 'package:admin_app/features/profile/sick_leave/screens/sick_leave_screen.dart';
-import 'package:admin_app/features/profile/profile_screen.dart';
+import 'package:admin_app/features/health_card/screens/health_card_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:admin_app/core/http_client_get.dart';
 
 class TabNavigatorRoutes {
   static const String root = '/';
@@ -27,9 +27,8 @@ class TabNavigator extends StatelessWidget {
     else if (tabItem == "Page3")
       child = SickLeaveScreen();
     else if (tabItem == "Page4")
-      child = Calendar();
-    else if (tabItem == "Page5")
-      child = ProfileScreen(text: "Jan Biskupski", text2: "Szczecin");
+      child = HealthCardScreen(); //Calendar();
+    else if (tabItem == "Page5") child = GetProfile(number: 2);
 
     return Navigator(
       key: navigatorKey,

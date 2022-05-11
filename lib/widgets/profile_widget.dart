@@ -1,15 +1,14 @@
 import 'package:admin_app/configuration/loc_files.dart';
 import 'package:flutter/material.dart';
-import 'package:admin_app/core/http_client_get.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 class ProfileWidget extends StatelessWidget {
-  final String text;
-  final String text2;
+  final String name;
+  final String address;
 
   ProfileWidget({
-    required this.text,
-    required this.text2,
+    required this.name,
+    required this.address,
   });
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class ProfileWidget extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: <Widget>[
                 AutoSizeText(
-                  text,
+                  name,
                   maxLines: 3,
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -61,7 +60,7 @@ class ProfileWidget extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: <Widget>[
                 AutoSizeText(
-                  text2,
+                  address,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                       color: Color.fromRGBO(254, 254, 254, 1),

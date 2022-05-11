@@ -1,11 +1,10 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:dio/dio.dart';
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:admin_app/widgets/hospital_widget.dart';
+import 'package:admin_app/widgets/disease_widget.dart';
 import 'package:admin_app/features/hospital/hospital_ward_screen.dart';
+import 'package:admin_app/features/profile/profile_screen.dart';
 //Work In Progress
 
 class Hospital {
@@ -170,17 +169,10 @@ class _GetHospitalState extends State<GetHospital> {
                 name: '${name}',
                 speciality: '${city}',
                 photo: AssetImage('assets/images/doctor.png'),
-                onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => HospitalWardScreen(text: '${name}',text2:'${city}'))),
-        ),
-            /*    onPressed: () => Navigator.of(context).pushNamed(
-                  '/hospital_ward',
-                  arguments: <String, String>{
-                    'text': '${name}',
-                    'text2': '${city}',
-                  },
-                ),
-              ),*/
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (_) =>
+                        HospitalWardScreen(text: '${name}', text2: '${city}'))),
+              ),
             ],
           );
         }
@@ -226,16 +218,158 @@ class _GetDoctorState extends State<GetDoctor> {
             surname = data[widget.number].surname;
             specialization = data[widget.number].spec;
           }
+          return HospitalWidget(
+            image: AssetImage('assets/images/hospital.png'),
+            name: '${name}' + ' ${surname}',
+            speciality: '${specialization}',
+            photo: AssetImage('assets/images/doctor.png'),
+            onPressed: () {},
+          );
+        }
+      },
+    );
+  }
+
+  Future<String> downloadData() async {
+    return Future.value("Data download successfully");
+  }
+}
+
+class GetPatient extends StatefulWidget {
+  final int number;
+  GetPatient({
+    required this.number,
+  });
+  @override
+  _GetPatientState createState() => _GetPatientState();
+}
+
+class _GetPatientState extends State<GetPatient> {
+  late Future<List<Patient>> patient;
+  @override
+  void initState() {
+    super.initState();
+    patient = httpPatientGet();
+  }
+
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<Patient>>(
+      future: patient,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: Text('Please wait its loading...'));
+        } else {
+          var login = 'Login error';
+          var pass = 'Pass error';
+          var phone = "Phone error";
+          List<Patient>? data = snapshot.data;
+          if (data != null) {
+            login = data[widget.number].login;
+            pass = data[widget.number].pass;
+            phone = data[widget.number].phone;
+          }
           return Column(
             children: <Widget>[
               HospitalWidget(
                 image: AssetImage('assets/images/hospital.png'),
-                name: '${name}' + ' ${surname}',
-                speciality: '${specialization}',
+                name: '${login}' + ' ${pass}',
+                speciality: '${phone}',
                 photo: AssetImage('assets/images/doctor.png'),
                 onPressed: () {},
               ),
             ],
+          );
+        }
+      },
+    );
+  }
+
+  Future<String> downloadData() async {
+    return Future.value("Data download successfully");
+  }
+}
+
+class GetDisease extends StatefulWidget {
+  final int number;
+  GetDisease({
+    required this.number,
+  });
+  @override
+  _GetDiseaseState createState() => _GetDiseaseState();
+}
+
+class _GetDiseaseState extends State<GetDisease> {
+  late Future<List<Disease>> disease;
+  @override
+  void initState() {
+    super.initState();
+    disease = httpDiseaseGet();
+  }
+
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<Disease>>(
+      future: disease,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: Text('Please wait its loading...'));
+        } else {
+          var name = 'Name error';
+          var date = 'Date error';
+          List<Disease>? data = snapshot.data;
+          if (data != null) {
+            name = data[widget.number].disease;
+            date = data[widget.number].date;
+          }
+          return DiseaseWidget(
+            text: '${name}',
+            text2: '${date}',
+          );
+        }
+      },
+    );
+  }
+
+  Future<String> downloadData() async {
+    return Future.value("Data download successfully");
+  }
+}
+
+class GetProfile extends StatefulWidget {
+  final int number;
+  GetProfile({
+    required this.number,
+  });
+  @override
+  _GetProfileState createState() => _GetProfileState();
+}
+
+class _GetProfileState extends State<GetProfile> {
+  late Future<List<HealthCardAPI>> healthcard;
+  @override
+  void initState() {
+    super.initState();
+    healthcard = httpHealthCardGet();
+  }
+
+  Widget build(BuildContext context) {
+    return FutureBuilder<List<HealthCardAPI>>(
+      future: healthcard,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: Text('Please wait its loading...'));
+        } else {
+          var name = 'Name error';
+          var surname = 'Surname error';
+          var address = "Address error";
+          List<HealthCardAPI>? data = snapshot.data;
+          if (data != null) {
+            name = data[widget.number].name;
+            surname = data[widget.number].surname;
+            address = data[widget.number].address;
+          }
+          return ProfileScreen(
+            name: '${name}' + ' ' + '${surname}',
+            address: '${address}',
           );
         }
       },
@@ -269,18 +403,18 @@ Future<List<Doctor>> httpDoctorGet() async {
   }
 }
 
-Future<List<Patient>> httpPatientGet(basement, link) async {
+Future<List<Patient>> httpPatientGet() async {
   final response =
       await http.get(Uri.parse("http://zutbasement.synology.me:45555/Pacjent"));
   if (response.statusCode == 200) {
     List jsonResponse = json.decode(response.body);
     return jsonResponse.map((data) => Patient.fromJson(data)).toList();
   } else {
-    throw Exception("Failed to load doctor");
+    throw Exception("Failed to load patient screen");
   }
 }
 
-Future<List<HealthCardAPI>> httpHeatlhCardGet(basement, link) async {
+Future<List<HealthCardAPI>> httpHealthCardGet() async {
   final response = await http
       .get(Uri.parse("http://zutbasement.synology.me:45555/Karta_zdrowia"));
   if (response.statusCode == 200) {
@@ -291,9 +425,9 @@ Future<List<HealthCardAPI>> httpHeatlhCardGet(basement, link) async {
   }
 }
 
-Future<List<Disease>> httpDiseaseGet(basement, link) async {
+Future<List<Disease>> httpDiseaseGet() async {
   final response = await http
-      .get(Uri.parse("http://zutbasement.synology.me:45555/Karta_choroby"));
+      .get(Uri.parse("http://zutbasement.synology.me:45555/Karta_chorych"));
   if (response.statusCode == 200) {
     List jsonResponse = json.decode(response.body);
     return jsonResponse.map((data) => Disease.fromJson(data)).toList();

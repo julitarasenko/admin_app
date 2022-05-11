@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
 class DiseaseWidget extends StatefulWidget {
+  final String text;
+  final String text2;
+  DiseaseWidget({
+    required this.text,
+    required this.text2,
+  });
   @override
   _DiseaseWidgetState createState() => _DiseaseWidgetState();
 }
@@ -26,7 +32,8 @@ class _DiseaseWidgetState extends State<DiseaseWidget> {
               child: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(15, 20, 0, 8),
                 child: Text(
-                  'CHOROBA',
+                  widget.text,
+                  //'CHOROBA',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'Manrope',
@@ -50,7 +57,8 @@ class _DiseaseWidgetState extends State<DiseaseWidget> {
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
                     child: Text(
-                      '14.12.2021',
+                      widget.text2,
+                      // '14.12.2021',
                       style: TextStyle(
                         fontFamily: 'Manrope',
                         color: Color(0xFF263139),
@@ -75,7 +83,7 @@ class _DiseaseWidgetState extends State<DiseaseWidget> {
                 Align(
                   alignment: AlignmentDirectional(-1, 0),
                   child: Text(
-                    '21.12.2021',
+                    'DALEJ',
                     style: TextStyle(
                       fontFamily: 'Manrope',
                       color: Color(0xFF263139),

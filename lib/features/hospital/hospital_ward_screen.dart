@@ -41,7 +41,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ProfileWidget(text: widget.text, text2: widget.text2),
+              ProfileWidget(name: widget.text, address: widget.text2),
               ButtonWidget(
                 text: 'Szpitalny Oddział Ratunkowy',
                 colorText: Color(0xFF263139),
