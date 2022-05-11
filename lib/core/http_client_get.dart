@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:admin_app/widgets/hospital_widget.dart';
+import 'package:admin_app/features/hospital/hospital_ward_screen.dart';
 //Work In Progress
 
 class Hospital {
@@ -169,14 +170,17 @@ class _GetHospitalState extends State<GetHospital> {
                 name: '${name}',
                 speciality: '${city}',
                 photo: AssetImage('assets/images/doctor.png'),
-                onPressed: () => Navigator.of(context).pushNamed(
+                onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => HospitalWardScreen(text: '${name}',text2:'${city}'))),
+        ),
+            /*    onPressed: () => Navigator.of(context).pushNamed(
                   '/hospital_ward',
                   arguments: <String, String>{
                     'text': '${name}',
                     'text2': '${city}',
                   },
                 ),
-              ),
+              ),*/
             ],
           );
         }

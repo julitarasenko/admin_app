@@ -35,7 +35,7 @@ class ProfileWidget extends StatelessWidget {
           ),
           Container(
             width: 259,
-            height: 90,
+            height: 80,
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: <Widget>[
@@ -46,7 +46,7 @@ class ProfileWidget extends StatelessWidget {
                   style: TextStyle(
                       color: Color.fromRGBO(254, 254, 254, 1),
                       fontFamily: 'Manrope',
-                      fontSize: 24,
+                      fontSize: 30,
                       letterSpacing: 0,
                       fontWeight: FontWeight.normal,
                       height: 1),
@@ -60,7 +60,7 @@ class ProfileWidget extends StatelessWidget {
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: <Widget>[
-                Text(
+                AutoSizeText(
                   text2,
                   textAlign: TextAlign.center,
                   style: TextStyle(

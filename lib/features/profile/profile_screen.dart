@@ -3,19 +3,19 @@ import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:admin_app/core/http_client_get.dart';
 
-class HospitalWardScreen extends StatefulWidget {
+class ProfileScreen extends StatefulWidget {
   final String text;
   final String text2;
-  HospitalWardScreen({
-  required this.text,
-  required this.text2,
-});
+  ProfileScreen({
+    required this.text,
+    required this.text2,
+  });
   @override
-  _HospitalWardScreenState createState() => _HospitalWardScreenState();
+  _ProfileScreenState createState() => _ProfileScreenState();
 
 }
 
-class _HospitalWardScreenState extends State<HospitalWardScreen> {
+class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +43,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
             children: [
               ProfileWidget(text: widget.text, text2: widget.text2),
               ButtonWidget(
-                text: 'Szpitalny Oddział Ratunkowy',
+                text: 'TWOJE UBEZPIECZENIE',
                 colorText: Color(0xFF263139),
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.pushNamedAndRemoveUntil(
@@ -53,7 +53,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 ),
               ),
               ButtonWidget(
-                text: 'Oddział Gruźlicy, Chorób Płuc i Alergologii III',
+                text: 'TWOJE ZWOLNIENIA',
                 colorText: Color(0xFF263139),
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.pushNamedAndRemoveUntil(
@@ -63,7 +63,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 ),
               ),
               ButtonWidget(
-                text: 'Oddział Onkologii Klinicznej i Chemioterapii',
+                text: 'ERUOPEJSKA KARTA UBEZPIECZENIA ZDROWOTNEGO',
                 colorText: Color(0xFF263139),
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.pushNamedAndRemoveUntil(
@@ -73,27 +73,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 ),
               ),
               ButtonWidget(
-                text: 'Oddział Gruźlicy i Chorób Płuc I',
-                colorText: Color(0xFF263139),
-                colorButton: Color(0xFFFEFEFE),
-                onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/sign-up',
-                  ModalRoute.withName('/login'),
-                ),
-              ),
-              ButtonWidget(
-                text: 'Oddział Chirurgii Urazowo – Ortopedycznej V',
-                colorText: Color(0xFF263139),
-                colorButton: Color(0xFFFEFEFE),
-                onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/sign-up',
-                  ModalRoute.withName('/login'),
-                ),
-              ),
-              ButtonWidget(
-                text: 'Klinika Chirurgii Klatki Piersiowej',
+                text: 'KSIĄŻECZKA SANEPIDOWSKA',
                 colorText: Color(0xFF263139),
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.pushNamedAndRemoveUntil(

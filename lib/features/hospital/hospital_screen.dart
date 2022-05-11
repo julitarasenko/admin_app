@@ -1,7 +1,11 @@
+import 'package:admin_app/features/hospital/hospital_ward_screen.dart';
+import 'package:admin_app/features/hospital_ward/widget/text_field.dart';
 import 'package:admin_app/widgets/hospital_widget.dart';
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:admin_app/core/http_client_get.dart';
+
+import 'hospital_ward_screen.dart';
 
 class HospitalScreen extends StatefulWidget {
   @override
@@ -9,8 +13,6 @@ class HospitalScreen extends StatefulWidget {
 }
 
 class _HospitalScreenState extends State<HospitalScreen> {
-  final GlobalKey<FormState> _formKey = GlobalKey();
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -33,9 +35,17 @@ class _HospitalScreenState extends State<HospitalScreen> {
               ),
             ),
           ),
+          TextFieldTemplate(
+              hintText: '',
+              height: 2,
+              colorBorder: Colors.white,
+              colorInput: Colors.white70,
+              colorText: Colors.black,
+              marginVertical: 10,
+              marginHorizontal: 40),
           Container(
             padding: EdgeInsets.only(
-                top: 20.0, left: 50.0, right: 50.0, bottom: 10.0),
+                top: 10.0, left: 50.0, right: 50.0, bottom: 10.0),
             child: Text(
               "Ostatnie",
               textDirection: TextDirection.ltr,
@@ -55,24 +65,12 @@ class _HospitalScreenState extends State<HospitalScreen> {
               children: [
                 SizedBox(width: 35),
                 HospitalWidget(
-                    image: AssetImage('assets/images/hospital.png'),
-                    name: "mgr Patrycja Majecka",
-                    speciality: "specjalizacja onkologia",
-                    photo: AssetImage('assets/images/doctor.png'),
-                    onPressed: () {
-                      //   print('Essa');
-                      //    httpClientGet('localhost:44376',"http://localhost:44376/api/Szpital");
-                    } //=>
-                    //     Navigator.of(context).pushNamed('/hospital_ward'),
-                    ),
-                SizedBox(width: 50),
-                HospitalWidget(
                   image: AssetImage('assets/images/hospital.png'),
                   name: "mgr Grażyna Małek",
                   speciality: "specjalizacja kardiochirurgia",
                   photo: AssetImage('assets/images/doctor.png'),
-                  onPressed: () =>
-                      Navigator.of(context).pushNamed('/hospital_ward'),
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => HospitalWardScreen(text: "mgr Grażyna Małek",text2:"specjalizacja kardiochirurgia"))),
                 ),
                 SizedBox(width: 50),
                 HospitalWidget(
@@ -80,8 +78,8 @@ class _HospitalScreenState extends State<HospitalScreen> {
                   name: "mgr Grażyna Małek",
                   speciality: "specjalizacja kardiochirurgia",
                   photo: AssetImage('assets/images/doctor.png'),
-                  onPressed: () =>
-                      Navigator.of(context).pushNamed('/hospital_ward'),
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => HospitalWardScreen(text: "mgr Grażyna Małek",text2:"specjalizacja kardiochirurgia"))),
                 ),
                 SizedBox(width: 50),
                 HospitalWidget(
@@ -89,8 +87,17 @@ class _HospitalScreenState extends State<HospitalScreen> {
                   name: "mgr Grażyna Małek",
                   speciality: "specjalizacja kardiochirurgia",
                   photo: AssetImage('assets/images/doctor.png'),
-                  onPressed: () =>
-                      Navigator.of(context).pushNamed('/hospital_ward'),
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => HospitalWardScreen(text: "mgr Grażyna Małek",text2:"specjalizacja kardiochirurgia"))),
+                ),
+                SizedBox(width: 50),
+                HospitalWidget(
+                  image: AssetImage('assets/images/hospital.png'),
+                  name: "mgr Grażyna Małek",
+                  speciality: "specjalizacja kardiochirurgia",
+                  photo: AssetImage('assets/images/doctor.png'),
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => HospitalWardScreen(text: "mgr Grażyna Małek",text2:"specjalizacja kardiochirurgia"))),
                 ),
                 SizedBox(width: 35),
               ],
@@ -134,8 +141,8 @@ class _HospitalScreenState extends State<HospitalScreen> {
                   name: "mgr Grażyna Małek",
                   speciality: "specjalizacja kardiochirurgia",
                   photo: AssetImage('assets/images/doctor.png'),
-                  onPressed: () =>
-                      Navigator.of(context).pushNamed('/hospital_ward'),
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => HospitalWardScreen(text: "mgr Grażyna Małek",text2:"specjalizacja kardiochirurgia"))),
                 ),
                 SizedBox(width: 35),
               ],
@@ -179,8 +186,8 @@ class _HospitalScreenState extends State<HospitalScreen> {
                   name: "mgr Grażyna Małek",
                   speciality: "specjalizacja kardiochirurgia",
                   photo: AssetImage('assets/images/doctor.png'),
-                  onPressed: () =>
-                      Navigator.of(context).pushNamed('/hospital_ward'),
+                  onPressed: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => HospitalWardScreen(text: "mgr Grażyna Małek",text2:"specjalizacja kardiochirurgia"))),
                 ),
                 SizedBox(width: 35),
               ],

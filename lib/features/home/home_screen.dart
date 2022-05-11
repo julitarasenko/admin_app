@@ -1,7 +1,4 @@
-import 'package:admin_app/features/hospital/hospital_screen.dart';
-import 'package:admin_app/features/hospital_ward/calendar/calendar.dart';
-import 'package:admin_app/features/reservation/reservations_screen.dart';
-import 'package:admin_app/features/profile/sick_leave/screens/sick_leave_screen.dart';
+import 'package:admin_app/features/home/tab_navigator.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,43 +7,46 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 4;
+  String _currentPage = "Page1";
+  List<String> pageKeys = ["Page1", "Page2", "Page3", "Page4", "Page5"];
 
-  final List _children = [
-    HospitalScreen(),
-    //ReservationDoctorScreen(),
-    ReservationScreen(),
-    SickLeaveScreen(),
-    Calendar(),
-     /* Text(
-      'Index 3: Karta zdrowia',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),*/
-    Text(
-      'Index 4: Profil',
-      style: TextStyle(
-        fontSize: 30,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-  ];
 
-  void onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
+  Map<String, GlobalKey<NavigatorState>> _navigatorKeys = {
+    "Page1": GlobalKey<NavigatorState>(),
+    "Page2": GlobalKey<NavigatorState>(),
+    "Page3": GlobalKey<NavigatorState>(),
+    "Page4": GlobalKey<NavigatorState>(),
+    "Page5": GlobalKey<NavigatorState>(),
+  };
+  int _selectedIndex = 0;
+
+  void _selectTab(String tabItem, int index) {
+    if (tabItem == _currentPage) {
+      _navigatorKeys[tabItem]?.currentState?.popUntil((route) => route.isFirst);
+    } else {
+      setState(() {
+        _currentPage = pageKeys[index];
+        _selectedIndex = index;
+      });
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: _children[_currentIndex]),
+      body: Stack(children: <Widget>[
+        _buildOffstageNavigator("Page1"),
+        _buildOffstageNavigator("Page2"),
+        _buildOffstageNavigator("Page3"),
+        _buildOffstageNavigator("Page4"),
+        _buildOffstageNavigator("Page5"),
+      ]),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: onTabTapped,
-        currentIndex: _currentIndex,
+        selectedItemColor: Colors.blueAccent,
+        onTap: (int index) {
+          _selectTab(pageKeys[index], index);
+        },
+        currentIndex: _selectedIndex,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.add_business_outlined),
@@ -69,8 +69,17 @@ class _HomeScreenState extends State<HomeScreen> {
             label: 'Profil',
           ),
         ],
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.grey[900],
+        type: BottomNavigationBarType.fixed,
+      ),
+    );
+  }
+
+  Widget _buildOffstageNavigator(String tabItem) {
+    return Offstage(
+      offstage: _currentPage != tabItem,
+      child: TabNavigator(
+        navigatorKey: _navigatorKeys[tabItem]!,
+        tabItem: tabItem,
       ),
     );
   }

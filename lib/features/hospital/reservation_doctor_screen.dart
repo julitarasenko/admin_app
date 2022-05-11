@@ -1,3 +1,4 @@
+import 'package:admin_app/features/hospital_ward/widget/text_field.dart';
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:admin_app/widgets/doctor_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,31 +36,14 @@ class _ReservationDoctorScreenState extends State<ReservationDoctorScreen> {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(
-              vertical: 10,
-              horizontal: 50,
-            ),
-            height: 2 * 24.0,
-            child: TextField(
-              maxLines: 1,
-              textAlign: TextAlign.left,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                  borderSide: BorderSide(color: Colors.white, width: 3.0),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                  borderSide: BorderSide(color: Colors.white, width: 3.0),
-                ),
-                filled: true,
-                fillColor: Colors.white70,
-                hintText: "", //zmienic na string
-                hintStyle: TextStyle(color: Colors.black),
-              ),
-            ),
-          ),
+          TextFieldTemplate(
+              hintText: '',
+              height: 2,
+              colorBorder: Colors.white,
+              colorInput: Colors.white70,
+              colorText: Colors.black,
+              marginVertical: 10,
+              marginHorizontal: 40),
           Container(
             padding: EdgeInsets.only(top: 10.0, left: 60.0, right: 10.0),
             child: DoctorWidget(

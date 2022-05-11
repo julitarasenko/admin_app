@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
         '/sign-up': (context) => SignupScreen(),
         '/home-screen': (context) => HomeScreen(),
         '/reservation': (context) => ReservationScreen(),
-        '/hospital_ward': (context) => HospitalWardScreen(),
+        '/hospital_ward': (context) => HospitalWardScreen(text: "mgr Grażyna Małek",text2:"specjalizacja kardiochirurgia"),
       },
     );
   }

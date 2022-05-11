@@ -1,260 +1,191 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'dart:ui';
+import 'package:admin_app/configuration/loc_files.dart';
 
-void main() {
-  runApp(karta_zdrowia());
-}
+class HealthCard extends StatelessWidget {
+  final String name;
+  final int age;
+  final int weight;
+  final int height;
+  final String lastvisit;
 
-class karta_zdrowia extends StatelessWidget {
+  HealthCard({
+    required this.name,
+    required this.age,
+    required this.weight,
+    required this.height,
+    required this.lastvisit,
+  });
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Builder(builder: (BuildContext context) {
-        return Scaffold(
-          body: Stack(
-            children: [
-              Positioned(
-                left: 18,
-                top: 107,
-                child: Container(
-                  width: 340,
-                  height: 574,
-                  decoration: BoxDecoration(
-                    color: Color(
-                      0xff64a676,
+    return Container(
+        child: Align(
+          alignment: Alignment.topLeft,
+          child: Container(
+            width: 300,
+            height: 334,
+            decoration: BoxDecoration(
+              color: Color(0xFF4DAF8C),
+              borderRadius: BorderRadius.circular(20),
+              shape: BoxShape.rectangle,
+            ),
+            alignment: AlignmentDirectional(0, 0),
+            child: Stack(
+              alignment: AlignmentDirectional(0, 0),
+              children: [
+                Align(
+                  alignment: AlignmentDirectional(0, -0.8),
+                  child: Container(
+                    width: 83,
+                    height: 83,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFEEEEEE),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                              image: AssetImage(images + 'janek.png'),
+                              fit: BoxFit.fitWidth),
+                        ),
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
+                  ),
+                Align(
+                  alignment: AlignmentDirectional(0, -0.23),
+                  child: Text(
+                    'Jan Biskupski',
+                    style: TextStyle(
+                      fontFamily: 'Manrope',
+                      color: Color(0xFFFEFEFE),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                    ),
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-0.5, 0.6),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 1, 0),
+                            child: Text(
+                              'Wiek:',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFF263139),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            '21',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Manrope',
+                              color: Colors.white,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 1, 0),
+                            child: Text(
+                              'Waga:',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFF263139),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            child: Text(
+                              '77 kg',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFFFEFEFE),
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 1, 0),
+                            child: Text(
+                              'Wzrost:',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFF263139),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            child: Text(
+                              '179 cm',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFFFEFEFE),
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 1, 0),
+                            child: Text(
+                              'Ostatnia wizyta:',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFF263139),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 0, 0),
+                            child: Text(
+                              '10.12.2021',
+                              style: TextStyle(
+                                fontFamily: 'Manrope',
+                                color: Color(0xFFFEFEFE),
+                                fontSize: 18,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
                 ),
-              ),
-              Positioned(
-                left: 33,
-                top: 561,
-                child: Text(
-                  "10.12.2021",
-                  style: TextStyle(
-                    color: Color(
-                      0xffffffff,
-                    ),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 463,
-                child: Text(
-                  "179 cm",
-                  style: TextStyle(
-                    color: Color(
-                      0xffffffff,
-                    ),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 370,
-                child: Text(
-                  "77 kg",
-                  style: TextStyle(
-                    color: Color(
-                      0xffffffff,
-                    ),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 505,
-                child: Text(
-                  "OSTATNIA WIZYTA:",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 407,
-                child: Text(
-                  "WZROST:",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 318,
-                child: Text(
-                  "WAGA:",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 130,
-                top: 140,
-                child: Text(
-                  "Jan BISKUPSKI",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 229,
-                child: Text(
-                  "WIEK:",
-                  style: TextStyle(
-                    color: Color(
-                      0xff0c7028,
-                    ),
-                    fontSize: 28,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                    shadows: [
-                      Shadow(
-                        color: Color(
-                          0x3f000000,
-                        ),
-                        offset: Offset(
-                          0,
-                          4,
-                        ),
-                        blurRadius: 4,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 33,
-                top: 276,
-                child: Text(
-                  "21",
-                  style: TextStyle(
-                    color: Color(
-                      0xffffffff,
-                    ),
-                    fontSize: 36,
-                    fontWeight: FontWeight.w700,
-                    fontFamily: "Roboto",
-                    letterSpacing: 0,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Container(),
-            ],
+              ],
+            ),
           ),
-        );
-      }),
-      theme: ThemeData(
-        textTheme: TextTheme(),
-      ),
-      debugShowCheckedModeBanner: false,
+        )
+
     );
   }
 }
