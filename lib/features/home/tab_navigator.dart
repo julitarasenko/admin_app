@@ -3,7 +3,7 @@ import 'package:admin_app/features/reservation/reservations_screen.dart';
 import 'package:admin_app/features/profile/sick_leave/screens/sick_leave_screen.dart';
 import 'package:admin_app/features/health_card/screens/health_card_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:admin_app/core/http_client_get.dart';
+import 'package:admin_app/features/profile/get_profile.dart';
 
 class TabNavigatorRoutes {
   static const String root = '/';

@@ -4,7 +4,7 @@ import 'package:admin_app/widgets/vaccine_widget.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:admin_app/features/health_card/screens/health_card.dart';
-import 'package:admin_app/core/http_client_get.dart';
+import 'package:admin_app/features/health_card/get_disease.dart';
 
 class HealthCardScreen extends StatefulWidget {
   @override

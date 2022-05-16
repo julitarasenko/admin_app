@@ -1,5 +1,19 @@
 import 'package:flutter/material.dart';
 
+String sepText(String text, int n) {
+  String result = '';
+
+  int currentIndex = 0;
+
+  while (currentIndex < text.length) {
+    if (currentIndex % n == 0 && currentIndex != 0) result += '\n';
+    result += text[currentIndex];
+    currentIndex++;
+  }
+
+  return result;
+}
+
 class DoctorWidget extends StatelessWidget {
   final String name;
   final String speciality;
@@ -26,13 +40,15 @@ class DoctorWidget extends StatelessWidget {
           ),
         ),
         SizedBox(width: 10),
-        SizedBox(
+        SizedBox(width: 300,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 name,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
                 style: TextStyle(
                   color: Color(0xff263139),
                   fontSize: 15,
