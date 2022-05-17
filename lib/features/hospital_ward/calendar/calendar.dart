@@ -1,3 +1,4 @@
+import 'package:admin_app/features/hospital/reservation_doctor_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -12,6 +13,7 @@ class _CalendarState extends State<Calendar> {
   final GlobalKey<FormState> _formKey = GlobalKey();
   var _focusedCalendarDate = DateTime.now();
   DateTime? selectedCalendarDate;
+
   void fun(selectedCalendarDate) {
     print(selectedCalendarDate);
   }
@@ -25,12 +27,27 @@ class _CalendarState extends State<Calendar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Informacja o oddzale',
+          style: TextStyle(
+            color: Color(0xFF263139),
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Color(0xFF263139),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: Column(
         children: <Widget>[
           SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 125),
+                SizedBox(height: 75),
                 Container(
                   margin: EdgeInsets.all(28.0),
                   color: Color(0xFFE5E9EC),
@@ -101,12 +118,11 @@ class _CalendarState extends State<Calendar> {
             text: 'WYBIERZ DATĘ',
             colorText: Colors.black,
             colorButton: Colors.white,
-            onPressed: () => {
-              fun(selectedCalendarDate),
-              //   onPressed: () {
-              //      Navigator.push(context,
-              //         MaterialPageRoute(builder: (context) => VisitTimeScreen()));
-            },
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => ReservationDoctorScreen(),
+              ),
+            ),
           ),
         ],
       ),

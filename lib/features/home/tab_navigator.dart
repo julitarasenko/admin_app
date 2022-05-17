@@ -25,10 +25,9 @@ class TabNavigator extends StatelessWidget {
     else if (tabItem == "Page2")
       child = ReservationScreen();
     else if (tabItem == "Page3")
-      child = SickLeaveScreen();
-    else if (tabItem == "Page4")
       child = HealthCardScreen(); //Calendar();
-    else if (tabItem == "Page5") child = GetProfile(number: 2);
+    else if (tabItem == "Page4")
+      child = GetProfile(number: 2);
 
     return Navigator(
       key: navigatorKey,

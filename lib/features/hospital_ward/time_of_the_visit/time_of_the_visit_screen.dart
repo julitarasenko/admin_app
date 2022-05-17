@@ -1,3 +1,5 @@
+import 'package:admin_app/features/hospital/hospital_screen.dart';
+import 'package:admin_app/features/reservation/reservations_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:admin_app/features/hospital_ward/widget/text_field.dart';
 import 'package:admin_app/features/hospital_ward/widget/time_of_visit.dart';
@@ -14,8 +16,23 @@ class _VisitTimeScreenState extends State<VisitTimeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Zmień/wybierz liekarza',
+          style: TextStyle(
+            color: Color(0xFF263139),
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Color(0xFF263139),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 100),
+        padding: EdgeInsets.symmetric(vertical: 75),
         children: [
           Column(
             children: <Widget>[
@@ -68,10 +85,15 @@ class _VisitTimeScreenState extends State<VisitTimeScreen> {
                   marginHorizontal: 55),
               SizedBox(height: 15),
               ButtonWidget(
-                  text: 'ZAREZERWUJ',
-                  colorText: Color(0xFFFEFEFE),
-                  colorButton: Color(0xFF4DAF8C),
-                  onPressed: () {}),
+                text: 'ZAREZERWUJ',
+                colorText: Color(0xFFFEFEFE),
+                colorButton: Color(0xFF4DAF8C),
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => HospitalScreen(),
+                  ),
+                ),
+              ),
             ],
           ),
         ],
