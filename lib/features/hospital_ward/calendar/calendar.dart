@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
+import 'package:admin_app/features/hospital_ward/time_of_the_visit/time_of_the_visit_screen.dart';
 
 class Calendar extends StatefulWidget {
   @override
@@ -101,11 +102,9 @@ class _CalendarState extends State<Calendar> {
             text: 'WYBIERZ DATĘ',
             colorText: Colors.black,
             colorButton: Colors.white,
-            onPressed: () => {
-              fun(selectedCalendarDate),
-              //   onPressed: () {
-              //      Navigator.push(context,
-              //         MaterialPageRoute(builder: (context) => VisitTimeScreen()));
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => VisitTimeScreen()));
             },
           ),
         ],

@@ -1,17 +1,17 @@
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:admin_app/features/about_unit/about_unit.dart';
 
 class HospitalWardScreen extends StatefulWidget {
   final String text;
   final String text2;
   HospitalWardScreen({
-  required this.text,
-  required this.text2,
-});
+    required this.text,
+    required this.text2,
+  });
   @override
   _HospitalWardScreenState createState() => _HospitalWardScreenState();
-
 }
 
 class _HospitalWardScreenState extends State<HospitalWardScreen> {
@@ -45,11 +45,8 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 text: 'Szpitalny Oddział Ratunkowy',
                 colorText: Color(0xFF263139),
                 colorButton: Color(0xFFFEFEFE),
-                onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                  context,
-                  '/sign-up',
-                  ModalRoute.withName('/login'),
-                ),
+                onPressed: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (_) => AboutUnit())),
               ),
               ButtonWidget(
                 text: 'Oddział Gruźlicy, Chorób Płuc i Alergologii III',
