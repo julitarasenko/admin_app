@@ -2,6 +2,7 @@ import 'package:admin_app/features/about_unit/about_unit.dart';
 import 'package:admin_app/widgets/button_widget.dart';
 import 'package:admin_app/widgets/profile_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:admin_app/features/about_unit/about_unit.dart';
 
 class HospitalWardScreen extends StatefulWidget {
   final String text;
@@ -52,6 +53,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                     builder: (_) => AboutUnit(),
                   ),
                 ),
+
               ),
               ButtonWidget(
                 text: 'Oddział Gruźlicy, Chorób Płuc i Alergologii III',

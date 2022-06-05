@@ -37,10 +37,10 @@ class _GetHospitalState extends State<GetHospital> {
           return Column(
             children: <Widget>[
               HospitalWidget(
-                image: AssetImage('assets/images/hospital.png'),
+                image: AssetImage('assets/images/hospital5.jpeg'),
                 name: '${name}',
                 speciality: '${city}',
-                photo: AssetImage('assets/images/doctor.png'),
+                photo: AssetImage('assets/images/hospital5.jpeg'),
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(
                     builder: (_) =>
                         HospitalWardScreen(text: '${name}', text2: '${city}'))),
