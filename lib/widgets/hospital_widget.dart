@@ -52,6 +52,7 @@ class HospitalWidget extends StatelessWidget {
                   name: name,
                   speciality: speciality,
                   image: photo,
+                  onPressed: onPressed,
                 ),
               )
             ],

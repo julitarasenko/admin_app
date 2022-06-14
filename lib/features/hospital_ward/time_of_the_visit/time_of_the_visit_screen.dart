@@ -4,6 +4,17 @@ import 'package:admin_app/features/hospital_ward/widget/time_of_visit.dart';
 import 'package:admin_app/widgets/button_widget.dart';
 
 class VisitTimeScreen extends StatefulWidget {
+  final int branchid;
+  final int patientid;
+  String date="";
+  String date2="";
+
+  VisitTimeScreen(
+      {required this.branchid,
+        required this.patientid,
+        required this.date,
+        required this.date2,
+      });
   @override
   _VisitTimeScreenState createState() => _VisitTimeScreenState();
 }
@@ -33,18 +44,18 @@ class _VisitTimeScreenState extends State<VisitTimeScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  OneTimeOfVisit(left: '8:00', right: '8:30', onPressed: () {}),
+                  OneTimeOfVisit(left: '8:00', right: '8:30', onPressed: () => {widget.date='8:00',widget.date2='8:30'}),
                   OneTimeOfVisit(
-                      left: '10:15', right: '10:45', onPressed: () {}),
+                      left: '10:15', right: '10:45', onPressed: () =>{widget.date='10:15',widget.date2='10:45'}),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   OneTimeOfVisit(
-                      left: '12:00', right: '12:30', onPressed: () {}),
+                      left: '12:00', right: '12:30', onPressed: () =>{widget.date='12:00',widget.date2='12:30'}),
                   OneTimeOfVisit(
-                      left: '14:00', right: '14:30', onPressed: () {}),
+                      left: '14:00', right: '14:30', onPressed: () =>{widget.date='14:00',widget.date2='14:30'}),
                 ],
               ),
               Container(
