@@ -9,10 +9,26 @@ class SanepidCard extends StatefulWidget {
 class _SanepidCardState extends State<SanepidCard> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        appBar: AppBar(
+        title: Text(
+          'Profil',
+          style: TextStyle(
+            color: Color(0xFF263139),
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Color(0xFF263139),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        ),
+    body: Container(
       width: 400,
-      height: 587,
-      padding: EdgeInsets.all(10.0),
+      height: 600,
+      padding: EdgeInsets.all(30.0),
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
@@ -54,6 +70,7 @@ class _SanepidCardState extends State<SanepidCard> {
           ),
         ],
       ),
+    ),
     );
   }
 }

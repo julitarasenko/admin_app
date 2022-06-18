@@ -8,7 +8,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   String _currentPage = "Page1";
-  List<String> pageKeys = ["Page1", "Page2", "Page3", "Page4", "Page5"];
+  List<String> pageKeys = ["Page1", "Page2", "Page3", "Page4"];
 
 
   Map<String, GlobalKey<NavigatorState>> _navigatorKeys = {
@@ -16,7 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
     "Page2": GlobalKey<NavigatorState>(),
     "Page3": GlobalKey<NavigatorState>(),
     "Page4": GlobalKey<NavigatorState>(),
-    "Page5": GlobalKey<NavigatorState>(),
   };
   int _selectedIndex = 0;
 
@@ -39,7 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
         _buildOffstageNavigator("Page2"),
         _buildOffstageNavigator("Page3"),
         _buildOffstageNavigator("Page4"),
-        _buildOffstageNavigator("Page5"),
       ]),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.blueAccent,
@@ -55,10 +53,6 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.add_alert_outlined),
             label: 'Rezerwacje',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat_bubble_outline_rounded),
-            label: 'Czat',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.assignment_outlined),

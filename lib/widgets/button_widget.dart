@@ -25,6 +25,7 @@ class ButtonWidget extends StatelessWidget {
           elevation: 8,
           child: Text(
             text,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 12,
               fontFamily: "Manrope",

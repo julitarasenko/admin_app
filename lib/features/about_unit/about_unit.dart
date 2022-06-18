@@ -2,6 +2,7 @@ import 'package:admin_app/features/about_unit/about_unit_button.dart';
 import 'package:admin_app/features/about_unit/info_label_widget.dart';
 import 'package:admin_app/features/about_unit/staticmap_widget.dart';
 import 'package:admin_app/features/about_unit/unit_doctor_widget.dart';
+import 'package:admin_app/features/hospital_ward/calendar/calendar.dart';
 import 'package:admin_app/features/login/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
@@ -16,10 +17,25 @@ class _AboutUnitState extends State<AboutUnit> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Oddziały',
+          style: TextStyle(
+            color: Color(0xFF263139),
+          ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          color: Color(0xFF263139),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: Align(
         alignment: AlignmentDirectional(0, -0.9),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -28,7 +44,7 @@ class _AboutUnitState extends State<AboutUnit> {
                 Align(
                   alignment: AlignmentDirectional(-0.05, 0.15),
                   child: Text(
-                    'Szpitalny oddział warunkowy',
+                    'Szpitalny Oddział Rarunkowy',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Manrope',
@@ -100,10 +116,11 @@ class _AboutUnitState extends State<AboutUnit> {
                   text: 'ZAREZERWUJ TERMIN',
                   colorText: Color(0xFF263139),
                   colorButton: Color(0xFFFEFEFE),
-                  onPressed: () => Navigator.push(
-                    context,
+                  onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => Calendar(),
+
+                      builder: (_) => Calendar(),
+
                     ),
                   ),
                 ),
