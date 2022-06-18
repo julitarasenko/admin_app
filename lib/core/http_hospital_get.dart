@@ -32,8 +32,7 @@ class Hospital {
 
 Future<List<Hospital>> httpHospitalGet() async {
   final response = await http.get(Uri.parse(
-     "http://zutbasement.synology.me:8081/api/health-service/hospital/findAll"));
-    // "http://zutbasement.synology.me:8081/api/health-service/hospitals/"));
+      "http://zutbasement.synology.me:8081/api/health-service/hospital/findAll"));
   print(response);
   if (response.statusCode == 200) {
     List jsonResponse = json.decode(response.body);

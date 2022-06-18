@@ -32,16 +32,25 @@ class _GetDoctorState extends State<GetDoctor> {
           var specialization = "Specialization error";
           List<Doctor>? data = snapshot.data;
           if (data != null) {
-            name = data[widget.number].name;
-            surname = data[widget.number].surname;
-            specialization = data[widget.number].spec;
+            if(data.length>=widget.number+1) {
+              name = data[widget.number].name;
+              surname = data[widget.number].surname;
+              specialization = data[widget.number].spec;
+              return DoctorWidget(
+                image: AssetImage('assets/images/doctor${widget.number}.jpg'),
+                name: '${name}' + ' ${surname}',
+                speciality: '${specialization}',
+                onPressed: () => {},
+              );
+            }
+            else{
+              name="";
+              surname="";
+              specialization="";
+              return SizedBox.shrink();
+            }
           }
-          return DoctorWidget(
-            image: AssetImage('assets/images/doctor6.jpeg'),
-            name: '${name}' + ' ${surname}',
-            speciality: '${specialization}',
-            onPressed: () => {},
-          );
+          return SizedBox.shrink();
         }
       },
     );

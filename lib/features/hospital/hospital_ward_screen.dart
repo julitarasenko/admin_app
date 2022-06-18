@@ -50,7 +50,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => AboutUnit(),
+                    builder: (_) => AboutUnit(branchid: 8,),
                   ),
                 ),
 
@@ -61,7 +61,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => AboutUnit(),
+                    builder: (_) => AboutUnit(branchid: 11,),
                   ),
                 ),
               ),
@@ -71,7 +71,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => AboutUnit(),
+                    builder: (_) => AboutUnit(branchid: 8,),
                   ),
                 ),
               ),
@@ -81,7 +81,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => AboutUnit(),
+                    builder: (_) => AboutUnit(branchid: 9,),
                   ),
                 ),
               ),
@@ -91,7 +91,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => AboutUnit(),
+                    builder: (_) => AboutUnit(branchid: 7,),
                   ),
                 ),
               ),
@@ -101,7 +101,7 @@ class _HospitalWardScreenState extends State<HospitalWardScreen> {
                 colorButton: Color(0xFFFEFEFE),
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
-                    builder: (_) => AboutUnit(),
+                    builder: (_) => AboutUnit(branchid: 2,),
                   ),
                 ),
               ),

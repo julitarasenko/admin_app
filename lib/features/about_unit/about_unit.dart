@@ -7,8 +7,14 @@ import 'package:admin_app/features/login/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:admin_app/features/hospital_ward/calendar/calendar.dart';
+import 'package:admin_app/features/hospital/get_doctor_res.dart';
 
 class AboutUnit extends StatefulWidget {
+  final int branchid;
+  AboutUnit({
+    required this.branchid,
+  });
+
   @override
   _AboutUnitState createState() => _AboutUnitState();
 }
@@ -68,7 +74,9 @@ class _AboutUnitState extends State<AboutUnit> {
                   ),
                 ),
                 InfoLabelWidget(label: 'Kadra:'),
-                UnitDoctorWidget(
+              GetDoctor(number: 0, number2: widget.branchid),
+                GetDoctor(number: 1, number2: widget.branchid),
+              /*  UnitDoctorWidget(
                   name: "mgr Grażyna Małek",
                   speciality: "specjalizacja kardiochirurgia",
                   image: AssetImage('assets/images/doctor.png'),
@@ -77,7 +85,7 @@ class _AboutUnitState extends State<AboutUnit> {
                   name: "mgr Jacek Koszmar",
                   speciality: "specjalizacja ligma",
                   image: AssetImage('assets/images/doctor.png'),
-                ),
+                ),*/
                 InfoLabelWidget(label: 'Znajdź nas:'),
                 StaticmapWidget(),
                 Align(
@@ -119,7 +127,7 @@ class _AboutUnitState extends State<AboutUnit> {
                   onPressed: () => Navigator.of(context).push(
                     MaterialPageRoute(
 
-                      builder: (_) => Calendar(),
+                      builder: (_) => Calendar(branchid: widget.branchid,),
 
                     ),
                   ),

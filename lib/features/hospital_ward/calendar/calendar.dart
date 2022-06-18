@@ -6,6 +6,10 @@ import 'package:intl/intl.dart';
 import 'package:admin_app/features/hospital_ward/time_of_the_visit/time_of_the_visit_screen.dart';
 
 class Calendar extends StatefulWidget {
+  final int branchid;
+  Calendar({
+    required this.branchid,
+  });
   @override
   _CalendarState createState() => _CalendarState();
 }
@@ -119,9 +123,10 @@ class _CalendarState extends State<Calendar> {
             text: 'WYBIERZ DATĘ',
             colorText: Colors.black,
             colorButton: Colors.white,
+
             onPressed: () => Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (_) => ReservationDoctorScreen(),
+                builder: (_) => ReservationDoctorScreen(branchid: widget.branchid,),
               ),
             ),
           ),

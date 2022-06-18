@@ -4,8 +4,14 @@ import 'package:admin_app/widgets/button_widget.dart';
 import 'package:admin_app/widgets/doctor_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:admin_app/features/hospital/get_doctor_res.dart';
 
 class ReservationDoctorScreen extends StatefulWidget {
+  final int branchid;
+  ReservationDoctorScreen({
+    required this.branchid,
+  });
+
   @override
   _ReservationDoctorScreenState createState() =>
       _ReservationDoctorScreenState();
@@ -63,46 +69,23 @@ class _ReservationDoctorScreenState extends State<ReservationDoctorScreen> {
                 marginHorizontal: 40),
             Container(
               padding: EdgeInsets.only(top: 10.0, left: 60.0, right: 10.0),
-              child: DoctorWidget(
-                name: "mgr Grażyna Małek",
-                speciality: "specjalizacja kardiochirurgia",
-                image: AssetImage('assets/images/doctor.png'),
-              ),
+              child: GetDoctor(number: 0, number2: widget.branchid),
             ),
             Container(
               padding: EdgeInsets.only(top: 10.0, left: 60.0, right: 10.0),
-              child: DoctorWidget(
-                name: "mgr Grażyna Małek",
-                speciality: "specjalizacja kardiochirurgia",
-                image: AssetImage('assets/images/doctor.png'),
-              ),
+              child: GetDoctor(number: 1, number2: widget.branchid),
             ),
             Container(
               padding: EdgeInsets.only(top: 10.0, left: 60.0, right: 10.0),
-              child: DoctorWidget(
-                name: "mgr Grażyna Małek",
-                speciality: "specjalizacja kardiochirurgia",
-                image: AssetImage('assets/images/doctor.png'),
-              ),
+              child: GetDoctor(number: 2, number2: widget.branchid),
             ),
             Container(
               padding: EdgeInsets.only(top: 10.0, left: 60.0, right: 10.0),
-              child: DoctorWidget(
-                name: "mgr Grażyna Małek",
-                speciality: "specjalizacja kardiochirurgia",
-                image: AssetImage('assets/images/doctor.png'),
-              ),
+              child: GetDoctor(number: 3, number2: widget.branchid),
             ),
             Container(
               padding: EdgeInsets.only(top: 10.0, left: 60.0, right: 10.0),
-              child: DoctorWidget(
-                name: "mgr Grażyna Małek",
-                speciality: "specjalizacja kardiochirurgia",
-                image: AssetImage('assets/images/doctor.png'),
-              ),
-            ),
-            SizedBox(
-              height: 30.0,
+              child: GetDoctor(number: 4, number2: widget.branchid),
             ),
             ButtonWidget(
               text: 'WYBRAĆ LIEKARZA',
@@ -110,7 +93,12 @@ class _ReservationDoctorScreenState extends State<ReservationDoctorScreen> {
               colorButton: Color(0xFFFEFEFE),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => VisitTimeScreen(),
+                  builder: (_) => VisitTimeScreen(
+                    branchid: widget.branchid,
+                    patientid: 1,
+                    date: "",
+                    date2: "",
+                  ),
                 ),
               ),
             ),
@@ -120,7 +108,12 @@ class _ReservationDoctorScreenState extends State<ReservationDoctorScreen> {
               colorButton: Color(0xFFFEFEFE),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (_) => VisitTimeScreen(),
+                  builder: (_) => VisitTimeScreen(
+                    branchid: widget.branchid,
+                    patientid: 1,
+                    date: "",
+                    date2: "",
+                  ),
                 ),
               ),
             ),

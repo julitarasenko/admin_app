@@ -36,10 +36,10 @@ class _GetDoctorState extends State<GetDoctor> {
             specialization = data[widget.number].spec;
           }
           return HospitalWidget(
-            image: AssetImage('assets/images/doctor6.jpeg'),
+            image: AssetImage('assets/images/doctor${widget.number}.jpg'),
             name: '${name}' + ' ${surname}',
             speciality: '${specialization}',
-            photo: AssetImage('assets/images/doctor6.jpeg'),
+            photo: AssetImage('assets/images/doctor${widget.number}.jpg'),
             onPressed: () => {},
           );
         }
