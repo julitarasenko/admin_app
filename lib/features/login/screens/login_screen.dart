@@ -33,60 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
         SnackBar(content: Text('You now should log in to system')));
     _formKey.currentState!.validate();
 
-    /// TODO: All code below is not required for your app, because it was made to auth
-    /// in Firebase. Instead this method should handle your backend authentication.
-    ///
-    /// Also, for the first implementation without backend integration, you could add
-    /// here just some navigation to the next screen
-    ///
-    // if (_formKey.currentState != null) {
-    //   if (_formKey.currentState!.validate()) {
-    //     setState(() {
-    //       _isLoading = true;
-    //     });
-    //
-    //     AuthMethods()
-    //         .signInWithEmailAndPassword(_emailTextEditingController.text,
-    //             _passwordTextEditingController.text)
-    //         .then((user) async {
-    //       if (user != null) {
-    //         var data = await DatabaseMethods()
-    //             .getUserByUserEmail(_emailTextEditingController.text);
-    //         _logger.d(data.docs.first.data().toString());
-    //
-    //         final String uid = data.docs.first.id;
-    //         final CommonUser user = CommonUser(
-    //           uid: uid,
-    //           username: data.docs.first['username'],
-    //           email: data.docs.first['email'],
-    //           userType: EnumToString.fromString(
-    //               UserType.values, data.docs.first['userType']),
-    //         );
-    //         _logger.d(user.toString());
-    //         Navigator.pushReplacement(
-    //           context,
-    //           MaterialPageRoute(
-    //             builder: (context) => HomeScreen(
-    //               user: user,
-    //             ),
-    //           ),
-    //         );
-    //       } else {
-    //         setState(() {
-    //           _isLoading = false;
-    //           _errorOnLogin = true;
-    //         });
-    //       }
-    //     });
-    //   }
-    // }
   }
-
-  /// TODO: Be careful and change widgets in build method to have them right
-  /// styling regarding to your figma project
-  ///
-  /// Also, dont forget about [UserSignDataTextField] widget, which shows textfields
-  /// in forms. Probably it should be changed to to your needs
+  
   @override
   Widget build(BuildContext context) {
     return _isLoading
